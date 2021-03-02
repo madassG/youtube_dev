@@ -21,7 +21,8 @@ class Question(models.Model):
 
 
 class Task(models.Model):
-    task = models.TextField()
+    task_name = models.CharField(max_length=200)
+    task_text = models.TextField()
 
 
 class CompleteTask(models.Model):
