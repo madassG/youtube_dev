@@ -1,10 +1,8 @@
 from django.db import models
 from bot.models import User
 
-# Create your models here.
 
-
-class Channels(models.Model):
+class Channel(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     subscribers = models.IntegerField(default=0)
     total_views = models.IntegerField(default=0)

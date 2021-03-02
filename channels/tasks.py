@@ -1,6 +1,6 @@
 from youtubedev.celery import app
 from bot.models import User
-from channels.models import Channels
+from channels.models import Channel
 from channels.channel import check_channel
 
 
@@ -11,7 +11,7 @@ def check_accounts():
         channel_id = tmp_parcer(user.youtube)
         if channel_id != 'NO':
             data = check_channel(channel_id)
-            new_data = Channels()
+            new_data = Channel()
             new_data.owner = user
             new_data.subscribers = data['subscriberCount']
             new_data.total_views = data['viewCount']
