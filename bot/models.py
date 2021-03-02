@@ -12,4 +12,19 @@ class User(models.Model):
     name = models.CharField(max_length=40)
     target = models.TextField()
     youtube = models.URLField()
+    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
 
+
+class Question(models.Model):
+    question = models.CharField(max_length=200)
+    answer = models.TextField()
+
+
+class Task(models.Model):
+    task = models.TextField()
+
+
+class CompleteTask(models.Model):
+    answer = models.TextField()
+    task = models.ForeignKey(Task, on_delete=models.PROTECT, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
