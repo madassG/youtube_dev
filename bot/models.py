@@ -6,6 +6,9 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(verbose_name="имя модели", max_length=40)
 
+    def __str__(self):
+        return self.name
+
 
 class User(models.Model):
     chat = models.IntegerField(default=0, unique=True)
@@ -14,18 +17,30 @@ class User(models.Model):
     youtube = models.URLField()
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.name} {self.chat}'
+
 
 class Question(models.Model):
     question = models.CharField(max_length=200)
     answer = models.TextField()
+
+    def __str__(self):
+        return self.question
 
 
 class Task(models.Model):
     task_name = models.CharField(max_length=200)
     task_text = models.TextField()
 
+    def __str__(self):
+        return self.task_name
+
 
 class CompleteTask(models.Model):
     answer = models.TextField()
     task = models.ForeignKey(Task, on_delete=models.PROTECT, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.task} {self.user}'

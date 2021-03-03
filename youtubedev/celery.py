@@ -12,5 +12,9 @@ app.conf.beat_schedule = {
     'check-users-every-24-hours': {
         'task': 'channels.tasks.check_accounts',
         'schedule': crontab(),
+    },
+    'check-videos-every-24-hours': {
+        'task': 'channels.tasks.check_videos',
+        'schedule': crontab(),
     }
 }

@@ -4,6 +4,14 @@ from channels.models import Channel
 from channels.channel import check_channel
 
 
+def tmp_parcer(url):
+    result = 'NO'
+    if url.find('channel/') != -1:
+        id_start = url.find('channel/') + 8
+        result = url[id_start:]
+    return result
+
+
 @app.task
 def check_accounts():
     Users = User.objects.all()
@@ -19,9 +27,6 @@ def check_accounts():
             new_data.save()
 
 
-def tmp_parcer(url):
-    result = 'NO'
-    if url.find('channel/') != -1:
-        id_start = url.find('channel/') + 8
-        result = url[id_start:]
-    return result
+@app.task
+def check_videos():
+    pass
