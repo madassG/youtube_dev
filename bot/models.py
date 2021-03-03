@@ -42,6 +42,7 @@ class CompleteTask(models.Model):
     answer = models.TextField()
     task = models.ForeignKey(Task, on_delete=models.PROTECT, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    comment = models.TextField(default="")
 
     def __str__(self):
         return f'{self.task} {self.user}'
