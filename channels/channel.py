@@ -11,7 +11,7 @@ import googleapiclient.discovery
 from youtubedev.settings import YT_API
 
 
-def youtube_request_channel(channel_id, username, parts='statistics'):
+def youtube_request_channel(channel_id, username, parts='contentDetails,statistics'):
     os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
     api_service_name = "youtube"
@@ -32,9 +32,5 @@ def youtube_request_channel(channel_id, username, parts='statistics'):
         )
 
     response = request.execute()
-    if parts == 'statistics':
-        return response['items'][0]['statistics']
-    if parts == 'contentDetails':
-        return response['items'][0]['contentDetails']['relatedPlaylists']['uploads']
-    else:
-        return response
+
+    return response['items'][0]
