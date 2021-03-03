@@ -16,6 +16,7 @@ class User(models.Model):
     target = models.TextField()
     youtube = models.URLField()
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
+    playlist_id = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return f'{self.name} {self.chat}'

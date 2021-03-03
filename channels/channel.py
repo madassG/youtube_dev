@@ -11,9 +11,7 @@ import googleapiclient.discovery
 from youtubedev.settings import YT_API
 
 
-def check_channel(channel_id):
-    # Disable OAuthlib's HTTPS verification when running locally.
-    # *DO NOT* leave this option enabled in production.
+def youtube_request_channel(channel_id, username, parts='statistics'):
     os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
     api_service_name = "youtube"
@@ -21,13 +19,22 @@ def check_channel(channel_id):
     DEVELOPER_KEY = YT_API
 
     youtube = googleapiclient.discovery.build(
-        api_service_name, api_version, developerKey = DEVELOPER_KEY)
+        api_service_name, api_version, developerKey=DEVELOPER_KEY)
+    if username:
+        request = youtube.channels().list(
+            part=parts,
+            forUsername=channel_id
+        )
+    else:
+        request = youtube.channels().list(
+            part=parts,
+            id=channel_id
+        )
 
-    request = youtube.channels().list(
-        part="statistics",
-        id=channel_id
-    )
-
-    response = request.execute()['items'][0]['statistics']
-
-    return response
+    response = request.execute()
+    if parts == 'statistics':
+        return response['items'][0]['statistics']
+    if parts == 'contentDetails':
+        return response['items'][0]['contentDetails']['relatedPlaylists']['uploads']
+    else:
+        return response
