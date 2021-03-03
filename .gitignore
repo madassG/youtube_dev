@@ -5,4 +5,4 @@ botYouTube
 Youtubedev
 pyth
 venv
-__pycache__/
+**/__pycache__
