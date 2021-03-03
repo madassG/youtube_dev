@@ -20,29 +20,54 @@ class Registration:
 
     def getName(self, message):
         self.name = message.text
-        self.bot.send_message(message.from_user.id, "Расскажите свою цель")
+        self.bot.send_message(message.from_user.id, f"Приветствую, {self.name}. Чего ты хочешь добиться с нами?")
         self.bot.register_next_step_handler(message, self.getTarget)
 
     def getTarget(self, message):
         self.target = message.text
         keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
         keys = Category.objects.all()
-        keys_name = []
         for key in keys:
-            keys_name += [key.name]
-        keyboard1.row(*keys_name)
-        self.bot.send_message(message.from_user.id, "Укажите категорию", reply_markup=keyboard1)
+            keyboard1.add(telebot.types.KeyboardButton(key.name))
+        self.bot.send_message(message.from_user.id, "Отлично! Теперь укажи категорию", reply_markup=keyboard1)
         self.bot.register_next_step_handler(message, self.getCategory)
 
     def getCategory(self, message):
-        self.category = message.text
-        self.bot.send_message(message.from_user.id, "Укажите ссылку на ваш ютуб канал", reply_markup=None)
-        self.bot.register_next_step_handler(message, self.getYoutube)
+        categories = Category.objects.all()
+        for category in categories:
+            if category.name == message.text:
+                self.category = message.text
+                self.bot.send_message(message.from_user.id, "Прекрасный выбор."
+                                                            " Далее нужно указать ссылку на ваш ютуб канал"
+                                                            "(будьте бдительны, изменить ее нельзя)",
+                                      reply_markup=telebot.types.ReplyKeyboardRemove())
+                self.bot.register_next_step_handler(message, self.getYoutube)
+                break
+        else:
+            keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
+            keys_name = []
+            for key in categories:
+                keyboard1.add(telebot.types.KeyboardButton(key.name))
+            self.bot.send_message(message.from_user.id, "Такой категории нет. Пожалуйста, повторите попытку!", reply_markup=keyboard1)
+            self.bot.register_next_step_handler(message, self.getCategory)
 
     def getYoutube(self, message):
-        self.youtube = message.text
-        self.createUser()
-        self.function.cabinet(message)
+        if message.text.startswith("https://www.youtube.com/c") or \
+           message.text.startswith("https://www.youtube.com/channel") or \
+           message.text.startswith("https://youtube.com/channel") or \
+           message.text.startswith("https://youtube.com/c"):
+            youtubes = message.text.split('/')
+            if youtubes[4] == "":
+                self.bot.send_message(message.from_user.id, "Это не ссылка на ютуб канал. Повторите попытку!")
+                self.bot.register_next_step_handler(message, self.getYoutube)
+            else:
+                self.youtube = youtubes[4]
+                self.createUser()
+                self.bot.send_message(message.from_user.id, "Поздравляю, теперь вы станете популярным!!")
+                self.function.cabinet(message)
+        else:
+            self.bot.send_message(message.from_user.id, "Это не ссылка на ютуб канал. Повторите попытку!")
+            self.bot.register_next_step_handler(message, self.getYoutube)
 
     def createUser(self):
         category_user = Category.objects.get(name=self.category)
@@ -68,6 +93,85 @@ class user_bot(Registration):
             return False
 
 
+class Task_bot:
+    def __init__(self, bot):
+        self.bot = bot
+        self.function = Function(self.bot)
+        self.Task = ""
+
+    def put_task(self, message):
+        if message.text == "выход":
+            self.function.cabinet(message)
+        else:
+            try:
+                keyboard = telebot.types.ReplyKeyboardMarkup(True)
+                keyboard.row('отменить')
+                self.task = Task.objects.get(task_name=message.text)
+                self.bot.send_message(message.from_user.id, "Введите ответ", reply_markup=keyboard)
+                self.bot.register_next_step_handler(message, self.response_task)
+            except Exception:
+                self.bot.send_message(message.from_user.id, "такого вопроса нет")
+                self.bot.register_next_step_handler(message, self.all_task)
+
+    def response_task(self, message):
+        user = User.objects.get(chat=message.from_user.id)
+        if message.text != "отменить":
+            answer = message.text
+            complete = CompleteTask(answer=answer, task=self.task, user=user)
+            complete.save()
+            self.bot.send_message(message.from_user.id, "Ответ сохранен")
+        self.all_task(message)
+
+    def all_task(self, message):
+        tasks = Task.objects.all()
+        error = False
+        try:
+            user_it = User.objects.get(chat=message.from_user.id)
+        except:
+            error = True
+        if not error:
+            keys = []
+            self.bot.send_message(message.from_user.id, "Ваши задания:")
+            for task_it in tasks:
+                try:
+                    if CompleteTask.objects.get(task=task_it, user=user_it):
+                        continue
+                except Exception:
+                    keys += [task_it.task_name]
+                    self.bot.send_message(message.from_user.id, "-" * 30)
+                    self.bot.send_message(message.from_user.id, f" Задание: {task_it.task_name} \n{task_it.task_text}")
+            if not keys:
+                self.bot.send_message(message.from_user.id, "Заданий пока нет")
+                self.function.cabinet(message)
+            else:
+                keyboard = telebot.types.ReplyKeyboardMarkup(True)
+                for key in keys:
+                    keyboard.add(telebot.types.KeyboardButton(key))
+                keyboard.add('выход')
+                self.bot.send_message(message.from_user.id, "Выберите задание, которое хотите сделать",
+                                      reply_markup=keyboard)
+                self.bot.register_next_step_handler(message, self.put_task)
+        else:
+            self.bot.send_message(message.from_user.id, "ой-ей, кажется ошибка.")
+            self.function.cabinet(message)
+
+    def complete_task(self, message):
+        try:
+            user = User.objects.get(chat=message.from_user.id)
+            completes = CompleteTask.objects.all().filter(user=user)
+            for complete in completes:
+                self.bot.send_message(message.from_user.id, f" Задание:"
+                                                            f"\n{complete.task.task_name}"
+                                                            f"\nТекст Задания:"
+                                                            f"\n{complete.task.task_text}"
+                                                            f"\nВаш ответ:"
+                                                            f"\n{complete.answer}")
+            else:
+                self.bot.send_message(message.from_user.id, "Вы еще не выполнили ни одного задания")
+        except:
+            self.bot.send_message(message.from_user.id, "Вы еще не выполнили ни одного задания")
+
+
 class Function:
     def __init__(self, bot):
         self.bot = bot
@@ -80,21 +184,23 @@ class Function:
         except Exception:
             user = None
         if user is None:
-            keys = {
-                'регистрация', 'частые вопросы'
-            }
-            keyboard1.row(*keys)
-            if message == "/start":
+            keys = [
+                'регистрация', 'частые вопросы',
+            ]
+            for key in keys:
+                keyboard1.add(telebot.types.KeyboardButton(key))
+            if message.text == "/start":
                 self.bot.send_message(message.from_user.id, "Приветствую тебя! Я Данила научу тебя быть видеоблогером, "
                                                             "выбери подходящий тебе пункт", reply_markup=keyboard1)
             else:
                 self.bot.send_message(message.from_user.id, "Выберите подходящий пункт", reply_markup=keyboard1)
         else:
             keys = {
-                'мои задания', 'выполненные задания'
+                'мои задания', 'выполненные задания', 'статистика'
             }
-            keyboard1.row(*keys)
-            self.bot.send_message(message.from_user.id, "Вы в личном кабинете!", reply_markup=keyboard1)
+            for key in keys:
+                keyboard1.add(telebot.types.KeyboardButton(key))
+            self.bot.send_message(message.from_user.id, "Выберите подходящий пункт", reply_markup=keyboard1)
 
         keyboard1.row(*keys)
 
@@ -114,47 +220,6 @@ class Function:
             except KeyError:
                 self.bot.send_message(message.from_user.id, "такого вопроса нет")
             self.bot.register_next_step_handler(message, self.questions)
-
-    def put_task(self, message):
-        if message.text == "выход":
-            self.cabinet(message)
-        else:
-            try:
-                self.task = Task.objects.get(task_name=message.text)
-                self.bot.send_message(message.from_user.id, "введите ответ")
-                self.bot.register_next_step_handler(message, self.response_task)
-            except Exception:
-                self.bot.send_message(message.from_user.id, "такого вопроса нет")
-                self.bot.register_next_step_handler(message, self.all_task)
-
-    def response_task(self, message):
-        user = User.objects.get(chat=message.from_user.id)
-        answer = message.text
-        complete = CompleteTask(answer=answer, task=self.task, user=user)
-        complete.save()
-        self.bot.send_message(message.from_user.id, "Ответ сохранен")
-        self.all_task(message)
-
-    def all_task(self, message):
-        tasks = Task.objects.all()
-        user_it = User.objects.get(chat=message.from_user.id)
-        keys = []
-        for task_it in tasks:
-            try:
-                if CompleteTask.objects.get(task=task_it, user=user_it):
-                    continue
-            except Exception:
-                keys += [task_it.task_name]
-                self.bot.send_message(message.from_user.id, f" Задание: {task_it.task_name} \n{task_it.task_text}")
-        if not keys:
-            self.bot.send_message(message.from_user.id, "Заданий пока нет")
-            self.cabinet(message)
-        else:
-            keyboard = telebot.types.ReplyKeyboardMarkup(True)
-            keyboard.row(*keys + ['выход'])
-            self.bot.send_message(message.from_user.id, "Выберите задание, которое хотите сделать", reply_markup=keyboard)
-            self.bot.register_next_step_handler(message, self.put_task)
-
 
 
 class Command(BaseCommand):
@@ -181,21 +246,17 @@ class Command(BaseCommand):
                 if user.is_exist():
                     bot.send_message(message.from_user.id, "Ты уже с нами")
                 else:
-                    bot.send_message(message.from_user.id, "Введите имя")
+                    bot.send_message(message.from_user.id, "Введите имя",
+                                     reply_markup=telebot.types.ReplyKeyboardRemove())
                     bot.register_next_step_handler(message, user.getName)
             elif message.text == "мои задания":
-                function.all_task(message)
+                Task_bot(bot).all_task(message)
             elif message.text == "выполненные задания":
-                user = User.objects.get(chat=message.from_user.id)
-                completes = CompleteTask.objects.all().filter(user=user)
-                for complete in completes:
-                    bot.send_message(message.from_user.id, f" Задание:"
-                                                           f"\n{complete.task.task_name}"
-                                                           f"\nТекст Задания:"
-                                                           f"\n{complete.task.task_text}"
-                                                           f"\nВаш ответ:"
-                                                           f"\n{complete.answer}")
-
-
+                Task_bot(bot).complete_task(message)
+            elif message.text == "статистика":
+                bot.send_message(message.from_user.id, "функция в разработке. А пока выполняйте задания!")
+            else:
+                bot.send_message(message.from_user.id, "Извините, произошла ошибка")
+                function.cabinet(message)
 
         bot.polling()
