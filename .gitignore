@@ -6,3 +6,4 @@ Youtubedev
 pyth
 venv
 **/__pycache__
+/logs/
