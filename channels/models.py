@@ -11,3 +11,19 @@ class Channel(models.Model):
 
     def __str__(self):
         return "{} {}".format(self.owner, self.created_at)
+
+
+class Video(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    url_id = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+    published_at = models.DateTimeField()
+    avatar = models.URLField(default='https://c0.klipartz.com/pngpicture/358/592/gratis-png-icono-de-signo-de-interrogacion-signo-de-interrogacion.png')
+    title = models.CharField(blank=True, max_length=200)
+    viewCount = models.IntegerField(default=0)
+    likeCount = models.IntegerField(default=0)
+    dislikeCount = models.IntegerField(default=0)
+    commentsCount = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.owner} {self.title}"

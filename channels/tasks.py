@@ -1,7 +1,9 @@
 from youtubedev.celery import app
 from bot.models import User
-from channels.models import Channel
-from channels.channel import youtube_request_channel
+from channels.models import Channel, Video
+from channels.channel import youtube_request_channel, youtube_request_playlist, youtube_request_video
+from datetime import datetime
+import math
 
 
 def tmp_parcer(url):
@@ -34,16 +36,48 @@ def check_videos():
     for user in Users:
         playlist_id = playlist_parcer(user.playlist_id)
         if playlist_id != '':
-            pass
+            response = youtube_request_playlist(playlist_id)
+            videos = response['items']
+            totalResults = response['pageInfo']['totalResults']
+            perPage = response['pageInfo']['resultsPerPage']
+            key = False
+            for i in range(math.ceil(totalResults / perPage)):
+                if key:
+                    break
+                if i != 0:
+                    response = youtube_request_playlist(playlist_id, response['nextPageToken'])
+                    videos = response['items']
+                for vid in videos:
+                    pb_at_str = vid['contentDetails']['videoPublishedAt']
+                    published_at = datetime.strptime(pb_at_str, '%Y-%m-%dT%H:%M:%SZ')
+                    if (datetime.now() - published_at).days < 7:
+                        check_video.delay(user.pk, vid['contentDetails']['videoId'])
+                    else:
+                        key = True
+                        break
 
 
 @app.task
-def check_video(user_id):
-    pass
+def check_video(user_id, video_id):
+    user = User.objects.get(pk=user_id)
+    youtube_items = youtube_request_video(video_id)
+    if youtube_items is not None:
+        video = Video()
+        video.owner = user
+        video.url_id = video_id
+        video.published_at = datetime.strptime(youtube_items['snippet']['publishedAt'], '%Y-%m-%dT%H:%M:%SZ')
+        video.avatar = youtube_items['snippet']['thumbnails']['medium']
+        video.title = youtube_items['snippet']['title']
+        video.viewCount = youtube_items['statistics']['viewCount']
+        video.likeCount = youtube_items['statistics']['likeCount']
+        video.dislikeCount = youtube_items['statistics']['dislikeCount']
+        video.commentsCount = youtube_items['statistics']['commentCount']
+        video.save()
+
 
 @app.task
 def check_user(user_id):
-    user=User.objects.get(pk=user_id)
+    user = User.objects.get(pk=user_id)
     channel_id = tmp_parcer(user.youtube)
     if channel_id[0] != 'NO':
         items = youtube_request_channel(channel_id[0], channel_id[1])
