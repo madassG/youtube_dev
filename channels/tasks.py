@@ -4,6 +4,9 @@ from channels.models import Channel, Video
 from channels.channel import youtube_request_channel, youtube_request_playlist, youtube_request_video
 from datetime import datetime
 import math
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def tmp_parcer(url):
@@ -25,6 +28,7 @@ def playlist_parcer(id):
 
 @app.task
 def check_accounts():
+    """ Task to send task for checking all the accounts """
     Users = User.objects.all()
     for user in Users:
         check_user.delay(user.pk)
@@ -32,6 +36,7 @@ def check_accounts():
 
 @app.task
 def check_videos():
+    """ Creating task to check all video from the past week of every user """
     Users = User.objects.all()
     for user in Users:
         playlist_id = playlist_parcer(user.playlist_id)
@@ -46,6 +51,11 @@ def check_videos():
                     break
                 if i != 0:
                     response = youtube_request_playlist(playlist_id, response['nextPageToken'])
+                    if response is None:
+                        logger.error(
+                            f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
+                            f": check_videos - playlist id: {playlist_id}")
+                        return
                     videos = response['items']
                 for vid in videos:
                     pb_at_str = vid['contentDetails']['videoPublishedAt']
@@ -59,14 +69,20 @@ def check_videos():
 
 @app.task
 def check_video(user_id, video_id):
+    """ Task to check video """
     user = User.objects.get(pk=user_id)
     youtube_items = youtube_request_video(video_id)
+    if youtube_items is None:
+        logger.error(
+            f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
+            f": check_video - video id: {video_id}")
+        return
     if youtube_items is not None:
         video = Video()
         video.owner = user
         video.url_id = video_id
         video.published_at = datetime.strptime(youtube_items['snippet']['publishedAt'], '%Y-%m-%dT%H:%M:%SZ')
-        video.avatar = youtube_items['snippet']['thumbnails']['medium']
+        video.avatar = youtube_items['snippet']['thumbnails']['medium']['url']
         video.title = youtube_items['snippet']['title']
         video.viewCount = youtube_items['statistics']['viewCount']
         video.likeCount = youtube_items['statistics']['likeCount']
@@ -77,11 +93,16 @@ def check_video(user_id, video_id):
 
 @app.task
 def check_user(user_id):
+    """ Task to check info about user """
     user = User.objects.get(pk=user_id)
     channel_id = tmp_parcer(user.youtube)
     if channel_id[0] != 'NO':
         items = youtube_request_channel(channel_id[0], channel_id[1])
-
+        if items is None:
+            logger.error(
+                f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
+                f": check_user - user id: {user_id}")
+            return
         user.playlist_id = items['contentDetails']['relatedPlaylists']['uploads']
         user.save()
 

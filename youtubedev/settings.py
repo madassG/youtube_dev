@@ -135,3 +135,47 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
 YT_API = os.getenv('YT_API')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/debug_log.log',
+        },
+        'django_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/django_error.log',
+        },
+        'request_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/request_error.log',
+        },
+        'tasks_error': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR + '/logs/tasks_error.log',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['django_error'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'channels.channel': {
+            'handlers': ['request_error'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        'channels.tasks': {
+            'handlers': ['tasks_error'],
+            'level': 'ERROR',
+            'propagate': True,
+        }
+    },
+}

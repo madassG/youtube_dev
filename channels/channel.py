@@ -1,9 +1,12 @@
 import os
-
+import logging
 import googleapiclient.discovery
 
 from youtubedev.settings import YT_API
+from datetime import datetime
 
+
+logger = logging.getLogger(__name__)
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 
@@ -16,6 +19,7 @@ youtube = googleapiclient.discovery.build(
 
 
 def youtube_request_channel(channel_id, username, parts='contentDetails,statistics'):
+    """ Youtube API request function to get channel info """
     if username:
         request = youtube.channels().list(
             part=parts,
@@ -28,11 +32,15 @@ def youtube_request_channel(channel_id, username, parts='contentDetails,statisti
         )
 
     response = request.execute()
-
+    if response_check(response) is not None:
+        logger.error(f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} : youtube_request_channel {channel_id}"
+                     f" - Error code : {response_check(response)}")
+        return None
     return response['items'][0]
 
 
 def youtube_request_playlist(playlist_id, nextPageToken=''):
+    """ Youtube API request function to get playlist info """
     if nextPageToken:
         request = youtube.playlistItems().list(
             part="contentDetails",
@@ -45,18 +53,31 @@ def youtube_request_playlist(playlist_id, nextPageToken=''):
             playlistId=playlist_id
         )
     response = request.execute()
-
+    if response_check(response) is not None:
+        logger.error(f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} : youtube_request_playlist {playlist_id}"
+                     f" - Error code : {response_check(response)}")
+        return None
     return response
 
 
 def youtube_request_video(video_id):
+    """ Youtube API request function to get video info """
     request = youtube.videos().list(
         part="statistics, snippet",
         id=video_id
     )
     response = request.execute()
-
+    if response_check(response) is not None:
+        logger.error(f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} : youtube_request_video {video_id}"
+                     f" - Error code : {response_check(response)}")
+        return None
     if response['pageInfo']['totalResults'] == 0:
         return None
     else:
         return response['items'][0]
+
+
+def response_check(response):
+    if response.get('error'):
+        return response['error']['code']
+    return None
