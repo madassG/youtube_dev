@@ -9,19 +9,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def tmp_parcer(url):
-    result = 'NO'
-    user = False
-    if url.find('channel/') != -1:
-        id_start = url.find('channel/') + 8
-        result = url[id_start:]
-    elif url.find('user/') != -1:
-        user_start = url.find('user/') + 5
-        result = url[user_start:]
-        user = True
-    return [result, user]
-
-
 def playlist_parcer(id):
     return id
 
@@ -95,9 +82,10 @@ def check_video(user_id, video_id):
 def check_user(user_id):
     """ Task to check info about user """
     user = User.objects.get(pk=user_id)
-    channel_id = tmp_parcer(user.youtube)
-    if channel_id[0] != 'NO':
-        items = youtube_request_channel(channel_id[0], channel_id[1])
+    channel_id = user.youtube
+    is_username = user.is_username
+    if channel_id:
+        items = youtube_request_channel(channel_id, is_username)
         if items is None:
             logger.error(
                 f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
