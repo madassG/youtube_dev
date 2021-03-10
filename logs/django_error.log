@@ -1,0 +1,424 @@
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 236717
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 127, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 124, in get_parent
+    return self.find_template(parent, context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 103, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 236717
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Последние'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'Последние', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 171131
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Последние'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'Последние', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 171003
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Последние'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'Последние', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 171003
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Последние'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'Последние', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 171003
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Мои'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 24: 'Мои', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 171025
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'Мои'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 65, in resolve_template
+    return get_template(template, using=self.using)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 270, in do_extends
+    nodelist = parser.parse()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 213, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 522, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 24: 'Мои', expected 'endblock'. Did you forget to register or load this tag?
+"GET /admin/ HTTP/1.1" 500 170897
