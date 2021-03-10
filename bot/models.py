@@ -14,7 +14,7 @@ class User(models.Model):
     chat = models.IntegerField(default=0, unique=True)
     name = models.CharField(max_length=40)
     target = models.TextField()
-    youtube = models.URLField()
+    youtube = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
     playlist_id = models.CharField(max_length=200, blank=True)
     is_username = models.BooleanField(default=False)
