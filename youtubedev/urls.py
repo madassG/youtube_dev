@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, reverse
 from django.shortcuts import redirect
-from bot import views
+from channels import views
 
 urlpatterns = [
     path('', lambda request: redirect('admin/', permanent=True)),
     path('admin/', admin.site.urls),
+    path('admin/users/<int:user_id>/', views.user_page, name='user'),
+    path('admin/ratings/', views.ratings, name='rating'),
+    path('admin/users/', views.users_page, name='users'),
 ]
