@@ -924,3 +924,1107 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
 "GET /admin/users/ HTTP/1.1" 500 248174
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel)
+AttributeError: 'QuerySet' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77421
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel)
+AttributeError: 'User' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77389
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel)
+AttributeError: 'User' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77389
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel)
+AttributeError: 'User' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77121
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel.all())
+AttributeError: 'User' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77401
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channel.all())
+AttributeError: 'User' object has no attribute 'channel'
+"GET /admin/users/752378415/ HTTP/1.1" 500 77401
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 23, in user_page
+    print(user.channels.all().order_by('-pub_date'))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1134, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1919, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'pub_date' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 95786
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 446, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ratings' not found. 'ratings' is not a valid view function or pattern name.
+"GET /admin/users/752378415/ HTTP/1.1" 500 249721
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 317336
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 317336
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    print(list[channel_checks])
+TypeError: 'type' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 79111
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('viewCount')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121137
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('viewCount')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121143
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('viewCount')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121143
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('viewCount')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121143
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('viewCount')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121143
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1863, in add_fields
+    join_info = self.setup_joins(name.split(LOOKUP_SEP), opts, alias, allow_many=allow_m2m)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1481, in names_to_path
+    raise FieldError("Cannot resolve keyword '%s' into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 24, in user_page
+    views = channel_checks.values_list('total_views')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 868, in values_list
+    clone = self._values(*_fields, **expressions)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 836, in _values
+    clone.query.set_values(fields)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 2174, in set_values
+    self.add_fields(field_names, True)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1885, in add_fields
+    raise FieldError("Cannot resolve keyword %r into field. "
+django.core.exceptions.FieldError: Cannot resolve keyword 'viewCount' into field. Choices are: created_at, id, owner, owner_id, subscribers, total_views, videos_quantity
+"GET /admin/users/752378415/ HTTP/1.1" 500 121141
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 317336
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 317336
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 317336
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 314582
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 314582
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 343757
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 342398
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 342398
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 162, in _render
+    return self.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 988, in render
+    output = self.filter_expression.resolve(context)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/base.py", line 698, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/template/defaultfilters.py", line 91, in json_script
+    return _json_script(value, element_id)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/utils/html.py", line 85, in json_script
+    json_str = json.dumps(value, cls=DjangoJSONEncoder).translate(_json_script_escapes)
+  File "/usr/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/usr/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/serializers/json.py", line 105, in default
+    return super().default(o)
+  File "/usr/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type QuerySet is not JSON serializable
+"GET /admin/users/752378415/ HTTP/1.1" 500 342398
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks.total_views)
+AttributeError: 'QuerySet' object has no attribute 'total_views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83198
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks)
+AttributeError: 'QuerySet' object has no attribute 'total_views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83174
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks[0].views)
+AttributeError: 'Channel' object has no attribute 'views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83164
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks[0].views)
+AttributeError: 'Channel' object has no attribute 'views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83164
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks[0].views)
+AttributeError: 'Channel' object has no attribute 'views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83164
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 30, in user_page
+    print(channel_checks[0].subscribers)
+AttributeError: 'Channel' object has no attribute 'views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83176
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 27, in user_page
+    print(channel_checks).total_views
+AttributeError: 'NoneType' object has no attribute 'total_views'
+"GET /admin/users/752378415/ HTTP/1.1" 500 78972
