@@ -2028,3 +2028,301 @@ Traceback (most recent call last):
     print(channel_checks).total_views
 AttributeError: 'NoneType' object has no attribute 'total_views'
 "GET /admin/users/752378415/ HTTP/1.1" 500 78972
+Internal Server Error: /admin/bot/task/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: bot_task.datetime
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: bot_task.datetime
+"GET /admin/bot/task/ HTTP/1.1" 500 163306
+Internal Server Error: /admin/bot/task/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: bot_task.datetime
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1811, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1156, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py", line 413, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: bot_task.datetime
+"GET /admin/bot/task/ HTTP/1.1" 500 163443
+Internal Server Error: /admin/bot/completetask/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1693, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 748, in get_changelist_instance
+    sortable_by,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 99, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 483, in get_queryset
+    qs, search_use_distinct = self.model_admin.get_search_results(request, qs, self.query)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1028, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1244, in build_filter
+    check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1156, in build_lookup
+    raise FieldError('Related Field got invalid lookup: {}'.format(lookup_name))
+django.core.exceptions.FieldError: Related Field got invalid lookup: icontains
+"GET /admin/bot/completetask/?q=%D0%9E%D1%82%D1%81%D0%BE%D1%81%D0%B0%D1%82%D1%8C HTTP/1.1" 500 173785
+Internal Server Error: /admin/bot/completetask/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1693, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 748, in get_changelist_instance
+    sortable_by,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 99, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 483, in get_queryset
+    qs, search_use_distinct = self.model_admin.get_search_results(request, qs, self.query)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1028, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1244, in build_filter
+    check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1156, in build_lookup
+    raise FieldError('Related Field got invalid lookup: {}'.format(lookup_name))
+django.core.exceptions.FieldError: Related Field got invalid lookup: icontains
+"GET /admin/bot/completetask/?q=php HTTP/1.1" 500 172739
+Internal Server Error: /admin/bot/completetask/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1693, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 748, in get_changelist_instance
+    sortable_by,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 99, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 483, in get_queryset
+    qs, search_use_distinct = self.model_admin.get_search_results(request, qs, self.query)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1028, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1244, in build_filter
+    check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1156, in build_lookup
+    raise FieldError('Related Field got invalid lookup: {}'.format(lookup_name))
+django.core.exceptions.FieldError: Related Field got invalid lookup: icontains
+"GET /admin/bot/completetask/?q=d HTTP/1.1" 500 172172
+Internal Server Error: /admin/bot/completetask/
+Traceback (most recent call last):
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 614, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 233, in inner
+    return view(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1693, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 748, in get_changelist_instance
+    sortable_by,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 99, in __init__
+    self.queryset = self.get_queryset(request)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/views/main.py", line 483, in get_queryset
+    qs, search_use_distinct = self.model_admin.get_search_results(request, qs, self.query)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/contrib/admin/options.py", line 1028, in get_search_results
+    queryset = queryset.filter(reduce(operator.or_, or_queries))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 942, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 962, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, *args, **kwargs)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/query.py", line 969, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1358, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1244, in build_filter
+    check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1380, in _add_q
+    split_subq=split_subq, check_filterable=check_filterable,
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1319, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/home/mrrobot/work/youtubedev/Youtubedev/lib/python3.6/site-packages/django/db/models/sql/query.py", line 1156, in build_lookup
+    raise FieldError('Related Field got invalid lookup: {}'.format(lookup_name))
+django.core.exceptions.FieldError: Related Field got invalid lookup: icontains
+"GET /admin/bot/completetask/?q=dsds HTTP/1.1" 500 172268
