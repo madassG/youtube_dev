@@ -4,13 +4,19 @@ from django.contrib.admin import site
 from django.template.response import TemplateResponse
 from bot.models import User
 from datetime import datetime
+from django.core.paginator import Paginator
+
 
 @staff_member_required
 def users_page(request):
-
+    request.GET.get('gay', 'default')
+    users = User.objects.order_by('name').all()
+    print(users)
+    pages = Paginator(users, 10)
     context = {
         **site.each_context(request),
-        'title': 'Пользователи'
+        'title': 'Пользователи',
+        'page': pages
     }
 
     request.current_app = site.name
