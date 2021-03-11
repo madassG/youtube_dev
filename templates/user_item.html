@@ -1,1 +1,10 @@
-gay
+<a href="{% url 'user' user.chat %}" class="list-group-item list-group-item-action">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{user.name}}</h5>
+      <small class="text-muted">{{user.category}}</small>
+    </div>
+    <p class="mb-1">
+      {{user.target}}
+    </p>
+    <small class="text-muted">{{ user.chat | linebreaksbr }}</small>
+  </a>

@@ -5,18 +5,25 @@ from django.template.response import TemplateResponse
 from bot.models import User
 from datetime import datetime
 from django.core.paginator import Paginator
+from django.forms.models import model_to_dict
+from channels.analysis import analyse_channel
 
 
 @staff_member_required
 def users_page(request):
-    request.GET.get('gay', 'default')
-    users = User.objects.order_by('name').all()
+    if request.GET.get('search', ''):
+        users = User.objects.filter(chat__icontains=request.GET['search'])
+        users2 = User.objects.filter(name__icontains=request.GET['search'])
+        users = users | users2
+    else:
+        users = User.objects.order_by('name').all()
     pages = Paginator(users, 10)
-    print(pages.count)
+    page_number = request.GET.get('page')
+    page_obj = pages.get_page(page_number)
     context = {
         **site.each_context(request),
         'title': 'Пользователи',
-        'page': pages
+        'page': page_obj
     }
 
     request.current_app = site.name
@@ -26,7 +33,10 @@ def users_page(request):
 
 @staff_member_required
 def user_page(request, user_id):
-    user = User.objects.filter(chat='752378415')[0]
+    user = User.objects.filter(chat=user_id)[0]
+    changes = analyse_channel(user.id)
+    user_dict = model_to_dict(user)
+    user_dict['category'] = user.category
     channel_checks = user.channels.all().order_by('created_at')
 
     views, subs, quantity, created_at = [], [], [], []
@@ -44,7 +54,9 @@ def user_page(request, user_id):
     context = {
         **site.each_context(request),
         'title': 'Страница пользователя',
-        'data': data
+        'data': data,
+        'user': user_dict,
+        'changes': changes,
     }
 
     request.current_app = site.name

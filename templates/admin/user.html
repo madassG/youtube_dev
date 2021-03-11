@@ -4,6 +4,9 @@
 {% block extrastyle %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 {% endblock %}
 
 {% block breadcrumbs %}{% endblock %}
@@ -14,13 +17,235 @@
 <a href="{% url 'admin:index' %}">Администрирование</a>
 <a href="{% url 'rating' %}">Рейтинги</a>
 
-<div id="app">
-    {{ data|json_script:'data' }}
-    <div class="chart-container" style="position: relative; height:10vh; width:30vw">
-    <canvas id="speedChart" width="80" height="60"></canvas>
-    <canvas id="secondChart" width="80" height="60"></canvas>
+<div class="container">
+    <div class="main-body">
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <div class="mt-3">
+                      <h4>{{user.name}}</h4>
+                      <p class="text-secondary mb-1">Идентификатор чата: {{user.chat}}</p>
+                      <p class="text-muted font-size-sm">Категория: {{user.category}}</p>
+<!--                      <button class="btn btn-primary">Follow</button>-->
+<!--                      <button class="btn btn-outline-primary">Message</button>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-3">
+                <ul class="list-group list-group-flush">
+                    <a href="https://www.youtube.com/channel/{{ user.youtube }}" target="_blank">
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Youtube</h6>
+                    <span class="text-secondary"></span>
+                  </li>
+                      </a>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Цель</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.target}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Подписчики</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{changes.today.subs}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Просмотры</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{changes.today.views}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Количество видео</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{changes.today.vids}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters-sm">
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-80">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Изменения за день </h6>
+                      <hr style="background-color: #007bff !important; height: 2px;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Количество видео</small>
+                        <h6>
+                          {% if changes.day.change.vids >= 0 %}
+                            <b style="color: green;">+{{changes.day.change.vids}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.day.change.vids}}</b>
+                          {%endif%}
+                        </h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Просмотры</small>
+                        <h6>{% if changes.day.change.views >= 0 %}
+                            <b style="color: green;">+{{changes.day.change.views}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.day.change.views}}</b>
+                          {%endif%}</h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Подписчики</small>
+                        <h6>{% if changes.day.change.subs >= 0%}
+                            <b style="color: green;">+{{changes.day.change.subs}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.day.change.subs}}</b>
+                          {%endif%}</h6>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-80">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Изменения за неделю </h6>
+                      <hr style="background-color: #007bff !important; height: 2px;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Количество видео</small>
+                        <h6>
+                          {% if changes.week.change.vids >= 0 %}
+                            <b style="color: green;">+{{changes.week.change.vids}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.week.change.vids}}</b>
+                          {%endif%}
+                        </h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Просмотры</small>
+                        <h6>{% if changes.week.change.views >= 0 %}
+                            <b style="color: green;">+{{changes.week.change.views}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.week.change.views}}</b>
+                          {%endif%}</h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Подписчики</small>
+                        <h6>{% if changes.week.change.subs >= 0%}
+                            <b style="color: green;">+{{changes.week.change.subs}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.week.change.subs}}</b>
+                          {%endif%}</h6>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-80">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Изменения за месяц </h6>
+                      <hr style="background-color: #007bff !important; height: 2px;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Количество видео</small>
+                        <h6>
+                          {% if changes.month.change.vids >= 0 %}
+                            <b style="color: green;">+{{changes.month.change.vids}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.month.change.vids}}</b>
+                          {%endif%}
+                        </h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Просмотры</small>
+                        <h6>{% if changes.month.change.views >= 0 %}
+                            <b style="color: green;">+{{changes.month.change.views}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.month.change.views}}</b>
+                          {%endif%}</h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Подписчики</small>
+                        <h6>{% if changes.month.change.subs >= 0%}
+                            <b style="color: green;">+{{changes.month.change.subs}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.month.change.subs}}</b>
+                          {%endif%}</h6>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-80">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Изменения за Квартал </h6>
+                      <hr style="background-color: #007bff !important; height: 2px;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Количество видео</small>
+                        <h6>
+                          {% if changes.quarter.change.vids >= 0 %}
+                            <b style="color: green;">+{{changes.quarter.change.vids}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.quarter.change.vids}}</b>
+                          {%endif%}
+                        </h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Просмотры</small>
+                        <h6>{% if changes.quarter.change.views >= 0 %}
+                            <b style="color: green;">+{{changes.quarter.change.views}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.quarter.change.views}}</b>
+                          {%endif%}</h6>
+                      </div>
+                      <hr style="margin-top: 0; margin-bottom: 0.5rem;">
+                      <div class="d-flex flex-row justify-content-between">
+                        <small>Подписчики</small>
+                        <h6>{% if changes.quarter.change.subs >= 0%}
+                            <b style="color: green;">+{{changes.quarter.change.subs}}</b>
+                          {% else %}
+                            <b style="color: red;">{{changes.quarter.change.subs}}</b>
+                          {%endif%}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
+<div class="container" id="app">
+    {{ data|json_script:'data' }}
+    <canvas id="speedChart"></canvas>
+    <canvas id="secondChart"></canvas>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
@@ -30,11 +255,11 @@
     var speedCanvas = document.getElementById("speedChart");
     var secondCanvas = document.getElementById("secondChart");
 
-    Chart.defaults.global.defaultFontFamily = "Lato";
-    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontFamily = "Roboto";
+    Chart.defaults.global.defaultFontSize = 15;
 
     var dataFirst = {
-        label: "Views",
+        label: "Просмотры",
         data: data["views"],
         lineTension: 0,
         fill: false,
@@ -42,7 +267,7 @@
       };
 
     var dataSecond = {
-        label: "Subscribers",
+        label: "Подписчики",
         data: data["subs"],
         lineTension: 0,
         fill: false,
