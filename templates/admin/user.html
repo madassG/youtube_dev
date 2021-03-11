@@ -1,0 +1,95 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+<a href="{% url 'admin:index' %}">Администрирование</a>
+<a href="{% url 'rating' %}">Рейтинги</a>
+
+<div id="app">
+    {{ data|json_script:'data' }}
+    <div class="chart-container" style="position: relative; height:10vh; width:30vw">
+    <canvas id="speedChart" width="80" height="60"></canvas>
+    <canvas id="secondChart" width="80" height="60"></canvas>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const data = JSON.parse(document.getElementById('data').textContent);
+    var speedCanvas = document.getElementById("speedChart");
+    var secondCanvas = document.getElementById("secondChart");
+
+    Chart.defaults.global.defaultFontFamily = "Lato";
+    Chart.defaults.global.defaultFontSize = 18;
+
+    var dataFirst = {
+        label: "Views",
+        data: data["views"],
+        lineTension: 0,
+        fill: false,
+        borderColor: 'red'
+      };
+
+    var dataSecond = {
+        label: "Subscribers",
+        data: data["subs"],
+        lineTension: 0,
+        fill: false,
+      borderColor: 'blue'
+      };
+
+var speedData = {
+  labels: ['03.03.21','04.03.21','05.03.21','06.03.21','07.03.21','08.03.21','09.03.21'],
+  datasets: [dataFirst]
+};
+
+var secondData = {
+    labels: ['03.03.21','04.03.21','05.03.21','06.03.21','07.03.21','08.03.21','09.03.21'],
+    datasets: [dataSecond]
+};
+
+var chartOptions = {
+  legend: {
+    display: true,
+    position: 'top',
+    labels: {
+      boxWidth: 80,
+      fontColor: 'black'
+    }
+  }
+};
+
+var lineChart = new Chart(speedCanvas, {
+  type: 'line',
+  data: speedData,
+  options: chartOptions
+});
+
+var lineChart2 = new Chart(secondCanvas, {
+  type: 'line',
+  data: secondData,
+  options: chartOptions
+});
+
+<!--    var app = new Vue({-->
+<!--      delimiters: ["{$", "$}"],-->
+<!--      el: '#app',-->
+<!--      data: {-->
+<!--        message: 'Hello Vue!'-->
+<!--      }-->
+<!--    })-->
+</script>
+
+
+{% endblock %}

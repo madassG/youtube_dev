@@ -3,7 +3,7 @@ from bot.models import User
 
 
 class Channel(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Каналы', related_name='channels')
     subscribers = models.IntegerField(default=0)
     total_views = models.IntegerField(default=0)
     videos_quantity = models.IntegerField(default=0)
@@ -14,7 +14,7 @@ class Channel(models.Model):
 
 
 class Video(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Видео', related_name='videos')
     url_id = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     published_at = models.DateTimeField()
