@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-from bot.models import Category, User, Task, CompleteTask
+from bot.models import Category, User, Task, CompleteTask, Question
 import telebot
 
 
@@ -54,12 +54,19 @@ class Registration:
 
     def getYoutube(self, message):
         is_correct = False
+        is_id = False
         if message.text.startswith("https://www.youtube.com/c/") or message.text.startswith("https://youtube.com/c/"):
             is_correct = True
+            is_id = True
             self.is_username = True
         elif message.text.startswith("https://www.youtube.com/channel") or message.text.startswith("https://youtube.com/channel"):
             is_correct = True
-        if is_correct:
+
+        if is_id:
+            self.bot.send_message(message.from_user.id, "Пожалуйста укажите ссылку с id канала. Пример:\n"
+                                                        "https://www.youtube.com/channel/ваш_айди")
+            self.bot.register_next_step_handler(message, self.getYoutube)
+        elif is_correct:
             youtubes = message.text.split('/')
             if youtubes[4] == "":
                 self.bot.send_message(message.from_user.id, "Это не ссылка на ютуб канал. Повторите попытку!")
@@ -334,6 +341,33 @@ class personal_information:
             self.get(message)
 
 
+class statistic_bot:
+    def __init__(self, bot):
+        self.bot = bot
+        self.function = Function(bot)
+
+    def get(self, message):
+        user = User.objects.get(chat=message.from_user.id)
+        users = User.objects.all().filter(category=user.category).order_by('-rating')[:2]
+        level = 1
+        user_exist_in_list = False
+        for u in users:
+            if u.chat == user.chat:
+                self.bot.send_message(user.chat, f"место: {level}\nпользователь (это вы):{u.name}\nс рейтингом {u.rating}")
+                user_exist_in_list = True
+            else:
+                self.bot.send_message(user.chat, f"место: {level}\nпользователь:{u.name}\nс рейтингом {u.rating}")
+            level += 1
+        users = User.objects.all().filter(category=user.category).order_by('-rating')
+        if not user_exist_in_list:
+            for u in users:
+                if u.chat == user.chat:
+                    self.bot.send_message(user.chat,
+                                          f"место: {level}\nпользователь (это вы):{u.name}\nс рейтингом {u.rating}")
+                    break
+                level += 1
+
+
 class Function:
     def __init__(self, bot):
         self.bot = bot
@@ -367,22 +401,22 @@ class Function:
 
         keyboard1.row(*keys)
 
-    def questions(self, message):
-        answers = {
-            'вопрос 1': "ответ 1",
-            'вопрос 2': "ответ 2",
-            "вопрос 3": "ответ 3"
-        }
 
+class question_bot:
+    def __init__(self, bot):
+        self.bot = bot
+        self.function = Function(bot)
+
+    def get(self, message):
         if message.text == "выход":
-            self.cabinet(message)
+            self.function.cabinet(message)
         else:
-            answer = message.text
             try:
-                self.bot.send_message(message.from_user.id, answers[answer])
-            except KeyError:
+                question = Question.objects.get(question=message.text)
+                self.bot.send_message(message.from_user.id, question.answer)
+            except Exception:
                 self.bot.send_message(message.from_user.id, "такого вопроса нет")
-            self.bot.register_next_step_handler(message, self.questions)
+            self.bot.register_next_step_handler(message, self.get)
 
 
 class Command(BaseCommand):
@@ -393,39 +427,45 @@ class Command(BaseCommand):
 
         @bot.message_handler(content_types=['text'])
         def reactions(message):
-            #исправить используя массивы
-            if message.text == "/start":
-                function.cabinet(message)
-            elif message.text == "частые вопросы":
-                keys = [
-                    "вопрос 1", "вопрос 2", "вопрос 3", 'выход'
-                ]
+            user = user_bot(chat=message.from_user.id, bot=bot)
 
-                keyboard2 = telebot.types.ReplyKeyboardMarkup(True)
-                keyboard2.row(*keys)
-                bot.send_message(message.from_user.id, "Выбери интересующий тебя вопрос", reply_markup=keyboard2)
-                bot.register_next_step_handler(message, function.questions)
-            elif message.text == "регистрация":
-                user = user_bot(message.from_user.id, bot)
-                if user.is_exist():
-                    bot.send_message(message.from_user.id, "Ты уже с нами")
+            if user.is_exist():
+                if message.text == "/start":
+                    function.cabinet(message)
+                elif message.text == "мои задания":
+                    my_task(bot).get(message)
+                elif message.text == "выполненные задания":
+                    complete_task(bot).get(message)
+                elif message.text == "задания на проверке":
+                    check_task(bot).get(message)
+                elif message.text == "проваленные задания":
+                    fail_task(bot).get(message)
+                elif message.text == "статистика":
+                    statistic_bot(bot).get(message)
+                elif message.text == "личная информация":
+                    personal_information(bot).get(message)
                 else:
-                    bot.send_message(message.from_user.id, "Введите имя",
-                                     reply_markup=telebot.types.ReplyKeyboardRemove())
-                    bot.register_next_step_handler(message, user.getName)
-            elif message.text == "мои задания":
-                my_task(bot).get(message)
-            elif message.text == "выполненные задания":
-                complete_task(bot).get(message)
-            elif message.text == "задания на проверке":
-                check_task(bot).get(message)
-            elif message.text == "проваленные задания":
-                fail_task(bot).get(message)
-            elif message.text == "статистика":
-                bot.send_message(message.from_user.id, "функция в разработке. А пока выполняйте задания!")
-            elif message.text == "личная информация":
-                personal_information(bot).get(message)
+                    function.cabinet(message)
             else:
-                function.cabinet(message)
+                if message.text == "/start":
+                    function.cabinet(message)
+                elif message.text == "частые вопросы":
+                    question = question_bot(bot)
+                    questions = Question.objects.all()
+                    keyboard2 = telebot.types.ReplyKeyboardMarkup(True)
+                    for q in questions:
+                        keyboard2.add(telebot.types.KeyboardButton(q.question))
+
+                    keyboard2.add(telebot.types.KeyboardButton('выход'))
+                    bot.send_message(message.from_user.id, "Выбери интересующий тебя вопрос", reply_markup=keyboard2)
+                    bot.register_next_step_handler(message, question.get)
+                elif message.text == "регистрация":
+                    user = user_bot(message.from_user.id, bot)
+                    if user.is_exist():
+                        bot.send_message(message.from_user.id, "Ты уже с нами")
+                    else:
+                        bot.send_message(message.from_user.id, "Введите имя",
+                                         reply_markup=telebot.types.ReplyKeyboardRemove())
+                        bot.register_next_step_handler(message, user.getName)
 
         bot.polling()

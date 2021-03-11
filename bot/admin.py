@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Category, User, Task, CompleteTask
+from .models import Category, User, Task, CompleteTask, Question
 
 admin.site.register(Category)
-
+admin.site.register(Question)
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):

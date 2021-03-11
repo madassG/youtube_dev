@@ -19,14 +19,17 @@ class User(models.Model):
     playlist_id = models.CharField(max_length=200, blank=True)
     is_username = models.BooleanField(default=False)
     rating = models.IntegerField(default=0)
+
     def __str__(self):
         return f'{self.name} {self.chat}'
+
+    class Meta:
+        ordering = ['rating']
 
 
 class Question(models.Model):
     question = models.CharField(max_length=200)
     answer = models.TextField()
-    task_rating = models.IntegerField(default=2)
 
     def __str__(self):
         return self.question
@@ -35,7 +38,7 @@ class Question(models.Model):
 class Task(models.Model):
     task_name = models.CharField(max_length=200)
     task_text = models.TextField()
-
+    task_rating = models.IntegerField(default=2)
     def __str__(self):
         return self.task_name
 
