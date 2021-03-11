@@ -3,6 +3,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.admin import site
 from django.template.response import TemplateResponse
 from bot.models import User
+from datetime import datetime
 
 @staff_member_required
 def users_page(request):
@@ -27,7 +28,7 @@ def user_page(request, user_id):
         subs.append(check.subscribers)
         views.append(check.total_views)
         quantity.append(check.videos_quantity)
-        created_at.append(check.created_at)
+        created_at.append(datetime.strftime(check.created_at.date(), '%Y-%m-%d'))
     data = {
         'views': views,
         'subs': subs,
