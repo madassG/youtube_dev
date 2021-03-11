@@ -11,8 +11,8 @@ from django.core.paginator import Paginator
 def users_page(request):
     request.GET.get('gay', 'default')
     users = User.objects.order_by('name').all()
-    print(users)
     pages = Paginator(users, 10)
+    print(pages.count)
     context = {
         **site.each_context(request),
         'title': 'Пользователи',
