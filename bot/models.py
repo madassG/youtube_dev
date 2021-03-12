@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+import telebot
 # Create your models here.
 
 
@@ -51,6 +52,20 @@ class Task(models.Model):
     task_text = models.TextField(verbose_name="Текст задания")
     task_rating = models.IntegerField(verbose_name="Количество рейтинга за выполнение", default=2)
     datetime = models.DateField(verbose_name="Дата публикации вопроса", default=date.today)
+    is_publish = models.BooleanField(default=False)
+
+    def save(self, *args, **kwargs):
+        if self.datetime == date.today() and not self.is_publish:
+            self.is_publish = True
+            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            users = User.objects.all()
+            for user in users:
+                try:
+                    bot.send_message(user.chat, "У вас новое задание."
+                                                f"Задание:{self.task_name}")
+                except Exception:
+                    pass
+        super(Task, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.task_name
@@ -71,9 +86,27 @@ class CompleteTask(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True, verbose_name="Пользователь", )
     status = models.CharField(max_length=2, choices=StatusTask.choices, default=StatusTask.CHECK, verbose_name="Статус задания", )
     comment = models.TextField(default="", verbose_name="Ваш комментарий", null=True, blank=True)
+    okey = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.task} {self.user}'
+
+    def save(self, *args, **kwargs):
+        if self.status == 'CM' and not self.okey:
+            self.user.rating += self.task.task_rating
+            self.user.save()
+            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            bot.send_message(self.user.chat, "Вы выполнили задание!"
+                                             f"\nЗадание:{self.task.task_name}"
+                                             f"\n{self.comment}")
+            self.okey = True
+        if self.status == 'FL':
+            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            bot.send_message(self.user.chat, "Вы провалили задание!"
+                                             f"\nЗадание:{self.task.task_name}"
+                                             f"\n{self.comment}")
+
+        super(CompleteTask, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Задание на проверку"
