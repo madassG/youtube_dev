@@ -16,5 +16,10 @@ app.conf.beat_schedule = {
     'check-videos-every-24-hours': {
         'task': 'channels.tasks.check_videos',
         'schedule': crontab(),
+    },
+    'check-date-publish': {
+        'task': 'bot.tasks.check_publish',
+        'schedule': crontab(),
     }
 }
+
