@@ -25,6 +25,7 @@ class User(models.Model):
     playlist_id = models.CharField(max_length=200, blank=True, verbose_name="плейлист youtube канала")
     is_username = models.BooleanField(default=False)
     rating = models.IntegerField(default=0, verbose_name="рейтинг")
+    last_message = models.TextField(default="")
 
     def __str__(self):
         return f'имя - {self.name},\nчат - {self.chat}'

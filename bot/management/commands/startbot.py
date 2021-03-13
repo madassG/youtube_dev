@@ -8,30 +8,33 @@ import telebot
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
-        bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+        bot = telebot.TeleBot('1606504631:AAG7mt6794Kzra04ZLx4i1vZtKy_9kAD0rw')
         function = Bot(bot)
 
         @bot.message_handler(content_types=['text'])
         def reactions(message):
             user_bot = User(chat=message.from_user.id, bot=bot)
-            user = models.User.objects.get(chat=message.from_user.id)
             if user_bot.is_exist():
-                if message.text == "/start":
+                user = models.User.objects.get(chat=message.from_user.id)
+                if message.text == "/start" and user.last_message != message.text:
                     function.cabinet(message)
-                elif message.text == "мои задания":
+                elif message.text == "мои задания" and user.last_message != message.text:
+                    print(user.last_message)
                     Task(bot, user).get(message)
-                elif message.text == "выполненные задания":
+                elif message.text == "выполненные задания" and user.last_message != message.text:
                     CompleteTask(bot, user).get(message)
-                elif message.text == "задания на проверке":
+                elif message.text == "задания на проверке" and user.last_message != message.text:
                     CheckTask(bot, user).get(message)
-                elif message.text == "проваленные задания":
+                elif message.text == "проваленные задания" and user.last_message != message.text:
                     FailTask(bot, user).get(message)
-                elif message.text == "статистика":
+                elif message.text == "статистика" and user.last_message != message.text:
                     Statistic(bot, user).get(message)
-                elif message.text == "личная информация":
+                elif message.text == "личная информация" and user.last_message != message.text:
                     PersonalInformation(bot, user).get(message)
-                else:
+                elif user.last_message != message.text:
                     function.cabinet(message)
+                user.last_message = message.text
+                user.save()
             else:
                 if message.text == "/start":
                     function.cabinet(message)
