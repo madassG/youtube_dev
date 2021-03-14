@@ -7,7 +7,7 @@ from bot.models import User
 from datetime import datetime
 from django.core.paginator import Paginator
 from django.forms.models import model_to_dict
-from channels.analysis import analyse_channel
+from channels.analysis import analyse_channel, video_data
 
 
 @staff_member_required
@@ -35,7 +35,6 @@ def users_page(request):
 @staff_member_required
 def user_page(request, user_id):
     user = User.objects.filter(chat=user_id)[0]
-    changes = analyse_channel(user.id)
     user_dict = model_to_dict(user)
     user_dict['category'] = user.category
     user_dict['registration_date'] = datetime.strftime(user.registration_date, '%Y-%m-%d %H:%m')
@@ -43,7 +42,8 @@ def user_page(request, user_id):
         **site.each_context(request),
         'title': 'Страница пользователя',
         'user': user_dict,
-        'changes': changes,
+        'changes': analyse_channel(user.id),
+        'videos': video_data(user.id),
     }
     request.current_app = site.name
     return TemplateResponse(request, 'admin/user.html', context)

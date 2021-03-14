@@ -258,6 +258,7 @@
     </div>
 
 <div class="container" id="app" >
+
   {{ data|json_script:"data"}}
   {{ changes|json_script:"changes"}}
   <line-chart v-bind:label="label" v-bind:data="data" v-bind:labels="labels" v-bind:options="options" v-bind:time="time" v-bind:type="type" ref="LineChart"></line-chart>
@@ -303,7 +304,18 @@
     </div>
     </div>
   </div>
-  
+  <h3 style="margin: 5% 0 5% 0">Аналитика по видео</h3>
+  {%if videos%}
+  <div class="container-fluid">
+        <div class="row">
+           {% for video in videos%}
+            {% include 'video-item.html' %}
+          {% endfor %}
+        </div>
+  </div>
+  {% else %}
+  <p>У этого пользователя ещё нет анализированных видео...</p>
+  {%endif%}
 </div>
 
 <script src="{% static 'js/chart.min.js' %}"></script>
@@ -312,42 +324,5 @@
 <script src="{% static 'vue_templates/line-chart.js'%}"></script>
 <script src="{% static 'js/vue-script.js' %}"></script>
 
-<!--<script>-->
-<!--    const data = JSON.parse(document.getElementById('data').textContent);-->
-<!--    var speedCanvas = document.getElementById("chart");-->
-
-<!--    Chart.defaults.global.defaultFontFamily = "Roboto";-->
-<!--    Chart.defaults.global.defaultFontSize = 15;-->
-
-<!--    var dataGraphic = {-->
-<!--        label: "Просмотры",-->
-<!--        data: data["views"],-->
-<!--        lineTension: 0,-->
-<!--        fill: false,-->
-<!--        borderColor: 'red'-->
-<!--      };-->
-
-<!--    var dataset = {-->
-<!--      labels: data["date"],-->
-<!--      datasets: [dataGraphic]-->
-<!--    };-->
-
-<!--    var chartOptions = {-->
-<!--      legend: {-->
-<!--        display: true,-->
-<!--        position: 'top',-->
-<!--        labels: {-->
-<!--          boxWidth: 80,-->
-<!--          fontColor: 'black'-->
-<!--        }-->
-<!--      }-->
-<!--    };-->
-
-<!--    var lineChart = new Chart(speedCanvas, {-->
-<!--      type: 'line',-->
-<!--      data: dataset,-->
-<!--      options: chartOptions-->
-<!--    });-->
-<!--</script>-->
 
 {% endblock %}

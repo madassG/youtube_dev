@@ -5533,3 +5533,267 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'view_on_site' with keyword a
 Unsafe redirect to URL with protocol 'admin'
 Unsafe redirect to URL with protocol 'admin'
 Unsafe redirect to URL with protocol 'admin'
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 75, in video_data
+    videos = Video.objects.get(owner=user)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 433, in get
+    raise self.model.MultipleObjectsReturned(
+channels.models.Video.MultipleObjectsReturned: get() returned more than one Video -- it returned more than 20!
+"GET /admin/users/752378415/ HTTP/1.1" 500 95533
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 91, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 95352
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 91, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 95352
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 92, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 96871
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 90, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 92995
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 90, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 92995
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 92, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 97039
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 92, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 97039
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 92, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data['url_id'],
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 95170
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 92, in video_get_dict
+    'url': 'https://www.youtube.com/watch?v=' + data.url_id,
+TypeError: 'Video' object is not subscriptable
+"GET /admin/users/752378415/ HTTP/1.1" 500 95144
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 93, in video_get_dict
+    'publish_date': datetime.strptime(data.published_at, '%Y-%m-%d %H:%m')
+TypeError: strptime() argument 1 must be str, not datetime.datetime
+"GET /admin/users/752378415/ HTTP/1.1" 500 93703
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 93, in video_get_dict
+    'publish_date': datetime.strptime(data.published_at, '%Y-%m-%d %H:%m')
+TypeError: strptime() argument 1 must be str, not datetime.datetime
+"GET /admin/users/752378415/ HTTP/1.1" 500 93703
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 38, in user_page
+    video = video_data(user.id)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 82, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 94, in video_get_dict
+    'views': change.viewCount,
+AttributeError: 'dict' object has no attribute 'viewCount'
+"GET /admin/users/752378415/ HTTP/1.1" 500 100592
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 46, in user_page
+    'videos': video_data(user.id),
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 84, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 91, in video_get_dict
+    data = vids[0]
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 325, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+"GET /admin/users/752378415/ HTTP/1.1" 500 94208
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 46, in user_page
+    'videos': video_data(user.id),
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 84, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 91, in video_get_dict
+    data = vids[0]
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 325, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+"GET /admin/users/752378415/ HTTP/1.1" 500 94208
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 46, in user_page
+    'videos': video_data(user.id),
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 84, in video_data
+    video_dict = video_get_dict(video)
+  File "/home/genuis/Documents/youtubedev/channels/analysis.py", line 91, in video_get_dict
+    data = vids[0]
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/db/models/query.py", line 325, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+"GET /admin/users/752378415/ HTTP/1.1" 500 94208

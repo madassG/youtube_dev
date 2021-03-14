@@ -1,5 +1,5 @@
 from bot.models import User
-from channels.models import Channel
+from channels.models import Channel, Video
 from datetime import datetime, timedelta
 from django.forms.models import model_to_dict
 
@@ -68,3 +68,43 @@ def channel_delay(user_id, time=0, need_notes=True):
             }
             return change
         return None
+
+
+def video_data(user_id):
+    user = User.objects.get(pk=user_id)
+    videos = Video.objects.filter(owner=user).order_by('-published_at')
+    ids = []
+    for video_id in videos.values('url_id'):
+        ids.append(video_id['url_id'])
+    unique_ids = [e for i, e in enumerate(ids) if ids.index(e) == i]
+    videos = []
+    for video in unique_ids:
+        video_dict = video_get_dict(video)
+        videos.append(video_dict)
+    return videos
+
+
+def video_get_dict(video_id):
+    vids = Video.objects.filter(url_id=video_id).order_by('created_at')
+    data = vids[0]
+    # print(data.title)
+    query_changes = vids.values('viewCount', 'likeCount', 'dislikeCount', 'commentsCount', 'created_at')
+    changes = []
+    for change in query_changes:
+        changes.append({
+            'views': change['viewCount'],
+            'likes': change['likeCount'],
+            'dlikes': change['dislikeCount'],
+            'comms': change['commentsCount'],
+            'date': datetime.strftime(change['created_at'].date(), '%Y-%m-%d')
+        })
+    video_dict = {
+        'url': 'https://www.youtube.com/watch?v=' + data.url_id,
+        'publish_date': datetime.strftime(data.published_at, '%Y-%m-%d %H:%m'),
+        'end': datetime.strftime(data.created_at, '%Y-%m-%d %H:%m'),
+        'avatar': data.avatar,
+        'title': data.title,
+        'changes': changes,
+    }
+
+    return video_dict

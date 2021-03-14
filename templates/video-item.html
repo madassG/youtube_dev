@@ -1,0 +1,41 @@
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="tile">
+                    <div class="wrapper">
+
+
+                        <a href="{{ video.url }}" target="_blank">
+                            <div class="banner-img">
+                                <img src="{{ video.avatar }}" alt="Image 1">
+                            </div>
+                        <div class="header">{{ video.title }}</div>
+                        </a>
+
+                        <div class="dates">
+                            <div class="start">
+                                <strong>Опибликовано</strong> {{ video.publish_date }}
+                                <span></span>
+                            </div>
+                            <div class="ends">
+                                <strong>Проверялось до</strong> {{ video.end }}
+                            </div>
+                        </div>
+                        {% for change in video.changes %}
+                        <div class="stats">
+                            <p>{{change.date}}</p>
+                            <div>
+                                <strong>Просмотры</strong> {{change.views}}
+                            </div>
+
+                            <div>
+                                <strong>Лайки</strong> {{change.likes}}
+                            </div>
+
+                            <div>
+                                <strong>Дизлайки</strong> {{change.dlikes}}
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>

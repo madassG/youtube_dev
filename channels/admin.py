@@ -10,7 +10,12 @@ class ChannelAdmin(admin.ModelAdmin):
     list_filter = ('owner', )
 
 
-admin.site.register(Video)
+@admin.register(Video)
+class ChannelAdmin(admin.ModelAdmin):
+    list_display = ('owner', 'title', 'viewCount', 'likeCount', 'dislikeCount', 'commentsCount')
+    search_fields = ('owner__name', 'owner__chat', 'title')
+    list_filter = ('owner', )
+
 
 admin.site.index_title = 'Администрирование'
 admin.site.site_title = 'Админ-панель'
