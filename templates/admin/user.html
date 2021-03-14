@@ -10,12 +10,19 @@
 
 {% endblock %}
 
-{% block breadcrumbs %}{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+    &rsaquo; <a href="{% url 'users' %}">Пользователи</a>
+    {% if title %} &rsaquo; {{ title }} {{ user.chat }}{% endif %}
+</div>
+{% endblock %}
 
 {% block nav-sidebar %}{% endblock %}
 
 {% block content %}
 <a href="{% url 'admin:index' %}">Администрирование</a>
+<a href="{% url 'users' %}">Пользователи</a>
 <a href="{% url 'rating' %}">Рейтинги</a>
 
 <div class="container">

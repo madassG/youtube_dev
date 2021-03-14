@@ -6,7 +6,12 @@
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">
 {% endblock %}
 
-{% block breadcrumbs %}{% endblock %}
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% translate 'Home' %}</a>
+    {% if title %} &rsaquo; {{ title }}{% endif %}
+</div>
+{% endblock %}
 
 {% block nav-sidebar %}{% endblock %}
 
