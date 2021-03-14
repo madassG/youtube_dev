@@ -4,6 +4,7 @@
 {% block extrastyle %}
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static 'admin/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
 {% endblock %}
 
 {% block coltype %}colMS{% endblock %}
@@ -15,15 +16,18 @@
 {% block nav-sidebar %}{% endblock %}
 
 {% block content %}
-<a href="{% url 'users' %}">Пользователи</a>
-<a href="{% url 'rating' %}">Рейтинги</a>
 <div id="content-main">
+    <nav class="nav">
+  <a class="nav-link" href="{% url 'users' %}">Пользователи</a>
+  <a class="nav-link" href="{% url 'rating' %}">Рейтинги</a>
+</nav>
   {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
 </div>
 
 {% endblock %}
 
 {% block sidebar %}
+
 <div id="content-related">
     <div class="module" id="recent-actions-module">
         <h2>{% translate 'Recent actions' %}</h2>

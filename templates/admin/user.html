@@ -21,9 +21,11 @@
 {% block nav-sidebar %}{% endblock %}
 
 {% block content %}
-<a href="{% url 'admin:index' %}">Администрирование</a>
-<a href="{% url 'users' %}">Пользователи</a>
-<a href="{% url 'rating' %}">Рейтинги</a>
+<nav class="nav">
+  <a class="nav-link" href="{% url 'admin:index' %}">Администрирование</a>
+  <a class="nav-link" href="{% url 'users' %}">Пользователи</a>
+  <a class="nav-link" href="{% url 'rating' %}">Рейтинги</a>
+</nav>
 
 <div class="container">
     <div class="main-body">
