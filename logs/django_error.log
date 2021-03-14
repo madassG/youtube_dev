@@ -5430,3 +5430,63 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'users' with keyword arguments '{'app_label': ''}' not found. 1 pattern(s) tried: ['admin/users/$']
 "GET /admin/users/752378415/ HTTP/1.1" 500 329714
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 40, in user_page
+    user_dict['registration_date'] = datetime.strftime(user_dict['registration_date'], '%Y-%m-%d %h:%m')
+KeyError: 'registration_date'
+"GET /admin/users/752378415/ HTTP/1.1" 500 82992
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 41, in user_page
+    user_dict['registration_date'] = datetime.strftime(user_dict['registration_date'], '%Y-%m-%d %h:%m')
+KeyError: 'registration_date'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83012
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 41, in user_page
+    user_dict['registration_date'] = datetime.strftime(user_dict['registration_date'], '%Y-%m-%d %h:%m')
+KeyError: 'registration_date'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83012
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 41, in user_page
+    user_dict['registration_date'] = datetime.strftime(user_dict['registration_date'], '%Y-%m-%d %h:%m')
+KeyError: 'registration_date'
+"GET /admin/users/752378415/ HTTP/1.1" 500 83025
+Internal Server Error: /admin/users/752378415/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 41, in user_page
+    context = {
+KeyError: 'registration_date'
+"GET /admin/users/752378415/ HTTP/1.1" 500 82890

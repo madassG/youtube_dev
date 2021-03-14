@@ -7,7 +7,7 @@ admin.site.register(Question)
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('name', 'chat', 'youtube', 'category')
+    list_display = ('name', 'chat', 'youtube', 'category', 'registration_date')
     list_filter = ('category',)
     search_fields = ('chat', 'name', 'youtube')
     empty_value_display = '...'
@@ -15,6 +15,7 @@ class UserAdmin(admin.ModelAdmin):
 
     def has_add_permission(self, request):
         return False
+
 
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):

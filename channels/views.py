@@ -37,6 +37,7 @@ def user_page(request, user_id):
     changes = analyse_channel(user.id)
     user_dict = model_to_dict(user)
     user_dict['category'] = user.category
+    user_dict['registration_date'] = datetime.strftime(user.registration_date, '%Y-%m-%d %H:%m')
     context = {
         **site.each_context(request),
         'title': 'Страница пользователя',
