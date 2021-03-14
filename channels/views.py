@@ -37,28 +37,12 @@ def user_page(request, user_id):
     changes = analyse_channel(user.id)
     user_dict = model_to_dict(user)
     user_dict['category'] = user.category
-    channel_checks = user.channels.all().order_by('created_at')
-
-    views, subs, quantity, created_at = [], [], [], []
-    for check in list(channel_checks):
-        subs.append(check.subscribers)
-        views.append(check.total_views)
-        quantity.append(check.videos_quantity)
-        created_at.append(datetime.strftime(check.created_at.date(), '%Y-%m-%d'))
-    data = {
-        'views': views,
-        'subs': subs,
-        'quantity': quantity,
-        'date': created_at,
-    }
     context = {
         **site.each_context(request),
         'title': 'Страница пользователя',
-        'data': data,
         'user': user_dict,
         'changes': changes,
     }
-
     request.current_app = site.name
     return TemplateResponse(request, 'admin/user.html', context)
 

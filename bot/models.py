@@ -26,6 +26,7 @@ class User(models.Model):
     is_username = models.BooleanField(default=False)
     rating = models.IntegerField(default=0, verbose_name="рейтинг")
     last_message = models.TextField(default="")
+    registration_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'имя - {self.name},\nчат - {self.chat}'

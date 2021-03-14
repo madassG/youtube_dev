@@ -6,6 +6,8 @@ from channels.models import Channel, Video
 class ChannelAdmin(admin.ModelAdmin):
     list_display = ('owner', 'subscribers', 'total_views', 'videos_quantity', 'created_at')
     fields = ('owner', 'subscribers', 'total_views', 'videos_quantity')
+    search_fields = ('owner__name', 'owner__chat')
+    list_filter = ('owner', )
 
 
 admin.site.register(Video)
