@@ -7,7 +7,7 @@ admin.site.register(Question)
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('name', 'chat', 'youtube', 'category', 'registration_date')
+    list_display = ('name', 'chat', 'category', 'subs_day', 'subs_week', 'subs_month', 'subs_quarter', 'views_day', 'views_week', 'views_month', 'views_quarter')
     list_filter = ('category',)
     search_fields = ('chat', 'name', 'youtube')
     empty_value_display = '...'

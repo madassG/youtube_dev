@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.admin import site
 from django.template.response import TemplateResponse
+from django.shortcuts import redirect
 from bot.models import User
 from datetime import datetime
 from django.core.paginator import Paginator
@@ -56,4 +57,5 @@ def ratings(request):
     }
 
     request.current_app = site.name
+    return redirect('/admin/bot/user/')
     return TemplateResponse(request, 'admin/ratings.html', context)

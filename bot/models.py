@@ -23,6 +23,17 @@ class User(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True,
                                  verbose_name="категория")
     playlist_id = models.CharField(max_length=200, blank=True, verbose_name="плейлист youtube канала")
+
+    subs_day = models.IntegerField(default=0, verbose_name="подписчики за день")
+    subs_week = models.IntegerField(default=0, verbose_name="подписчики за неделю")
+    subs_month = models.IntegerField(default=0, verbose_name="подписчики за месяц")
+    subs_quarter = models.IntegerField(default=0, verbose_name="подписчики за квартал")
+
+    views_day = models.IntegerField(default=0, verbose_name="просмотры за день")
+    views_week = models.IntegerField(default=0, verbose_name="просмотры за неделю")
+    views_month = models.IntegerField(default=0, verbose_name="просмотры за месяц")
+    views_quarter = models.IntegerField(default=0, verbose_name="просмотры за квартал")
+
     is_username = models.BooleanField(default=False)
     rating = models.IntegerField(default=0, verbose_name="рейтинг")
     last_message = models.TextField(default="")

@@ -3,6 +3,7 @@ from bot.models import User
 from channels.models import Channel, Video
 from channels.channel import youtube_request_channel, youtube_request_playlist, youtube_request_video
 from datetime import datetime
+from channels.analysis import channel_delay
 import math
 import logging
 
@@ -106,3 +107,13 @@ def check_user(user_id):
         new_data.total_views = data.get('viewCount', -1)
         new_data.videos_quantity = data.get('videoCount', -1)
         new_data.save()
+        user.views_day = channel_delay(user_id, 1, False).get('change', 0).get('views', 0)
+        user.views_week = channel_delay(user_id, 7, False).get('change', 0).get('views', 0)
+        user.views_month = channel_delay(user_id, 30, False).get('change', 0).get('views', 0)
+        user.views_quarter = channel_delay(user_id, 91, False).get('change', 0).get('views', 0)
+
+        user.subs_day = channel_delay(user_id, 1, False).get('change', 0).get('subs', 0)
+        user.subs_week = channel_delay(user_id, 7, False).get('change', 0).get('subs', 0)
+        user.subs_month = channel_delay(user_id, 30, False).get('change', 0).get('subs', 0)
+        user.subs_quarter = channel_delay(user_id, 91, False).get('change', 0).get('subs', 0)
+        user.save()

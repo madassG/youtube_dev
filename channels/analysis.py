@@ -15,7 +15,7 @@ def analyse_channel(user_id):
     return changes
 
 
-def channel_delay(user_id, time=0):
+def channel_delay(user_id, time=0, need_notes=True):
     user = User.objects.get(pk=user_id)
     if time != 0:
         now = datetime.now().date()
@@ -35,23 +35,28 @@ def channel_delay(user_id, time=0):
                 'views': 0
             }
 
-        notes_array = {
-            'values': {
-                'subs': [],
-                'vids': [],
-                'views': [],
-            },
-            'dates': []
-        }
-        for note in notes:
-            notes_array['values']['subs'].append(note.subscribers)
-            notes_array['values']['vids'].append(note.videos_quantity)
-            notes_array['values']['views'].append(note.total_views)
-            notes_array['dates'].append(datetime.strftime(note.created_at.date(), '%Y-%m-%d'))
-        result = {
-            'notes': notes_array,
-            'change': change,
-        }
+        if need_notes:
+            notes_array = {
+                'values': {
+                    'subs': [],
+                    'vids': [],
+                    'views': [],
+                },
+                'dates': []
+            }
+            for note in notes:
+                notes_array['values']['subs'].append(note.subscribers)
+                notes_array['values']['vids'].append(note.videos_quantity)
+                notes_array['values']['views'].append(note.total_views)
+                notes_array['dates'].append(datetime.strftime(note.created_at.date(), '%Y-%m-%d'))
+            result = {
+                'notes': notes_array,
+                'change': change,
+            }
+        else:
+            result = {
+                'change': change,
+            }
         return result
     else:
         notes = Channel.objects.filter(owner=user).order_by('-created_at')

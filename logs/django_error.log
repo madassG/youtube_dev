@@ -5490,3 +5490,46 @@ Traceback (most recent call last):
     context = {
 KeyError: 'registration_date'
 "GET /admin/users/752378415/ HTTP/1.1" 500 82890
+Internal Server Error: /admin/ratings/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 60, in ratings
+    return redirect('admin')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/shortcuts.py", line 131, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'admin' not found. 'admin' is not a valid view function or pattern name.
+"GET /admin/ratings/ HTTP/1.1" 500 100534
+Internal Server Error: /admin/ratings/
+Traceback (most recent call last):
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/contrib/auth/decorators.py", line 21, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/genuis/Documents/youtubedev/channels/views.py", line 60, in ratings
+    return redirect('admin:view_on_site', content_type_id='bot', object_id='user ')
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/shortcuts.py", line 41, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/shortcuts.py", line 131, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/base.py", line 87, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/genuis/Documents/youtubedev/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 685, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_on_site' with keyword arguments '{'content_type_id': 'bot', 'object_id': 'user '}' not found. 1 pattern(s) tried: ['admin/r/(?P<content_type_id>[0-9]+)/(?P<object_id>.+)/$']
+"GET /admin/ratings/ HTTP/1.1" 500 106072
+Unsafe redirect to URL with protocol 'admin'
+Unsafe redirect to URL with protocol 'admin'
+Unsafe redirect to URL with protocol 'admin'
