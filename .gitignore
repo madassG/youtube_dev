@@ -7,3 +7,4 @@ pyth
 venv
 **/__pycache__
 /logs/
+/myapp.log
