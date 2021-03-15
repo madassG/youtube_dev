@@ -24,4 +24,5 @@ urlpatterns = [
     path('admin/users/<int:user_id>/', views.user_page, name='user'),
     path('admin/ratings/', views.ratings, name='rating'),
     path('admin/users/', views.users_page, name='users'),
+    path('admin/users/export/', views.export_users, name='export')
 ]
