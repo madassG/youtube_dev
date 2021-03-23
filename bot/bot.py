@@ -139,7 +139,7 @@ class User(Registration):
 
 class Task(Bot):
     def get(self, message):
-        tasks = models.Task.objects.all().filter(is_publish=True)
+        tasks = models.Task.objects.all().filter(is_publish=True)[:10]
         error = False
         user = self.user
         if not error:
@@ -203,7 +203,7 @@ class CompleteTask(Bot):
         user = self.user
         is_exist = False
         try:
-            completes = models.CompleteTask.objects.all().filter(user=user, status='CM')
+            completes = models.CompleteTask.objects.all().filter(user=user, status='CM')[:10]
             for complete in completes:
                 comment = ""
                 if complete.comment != "":
@@ -227,7 +227,7 @@ class CheckTask(Bot):
         user = self.user
         is_exist = False
         try:
-            completes = models.CompleteTask.objects.all().filter(user=user, status='CH')
+            completes = models.CompleteTask.objects.all().filter(user=user, status='CH')[:10]
             for complete in completes:
                 self.bot.send_message(message.from_user.id, f" Задание:"
                                                             f"\n{complete.task.task_name}"
@@ -326,6 +326,7 @@ class PersonalInformation(Bot):
                 self.bot.register_next_step_handler(message, self.rename)
             if message.text == "Цель":
                 self.bot.send_message(message.from_user.id, "Введите новую цель:", reply_markup=keyboard)
+                self.bot.register_next_step_handler(message, self.retarget)
 
     def rename(self, message):
         if message.text == "отменить":
@@ -381,6 +382,7 @@ class Question(Bot):
             try:
                 question = models.Question.objects.get(question=message.text)
                 self.bot.send_message(message.from_user.id, question.answer)
-            except Exception:
+            except models.models.ObjectDoesNotExist:
                 self.bot.send_message(message.from_user.id, "такого вопроса нет")
+                self.cabinet(message)
             self.bot.register_next_step_handler(message, self.get)

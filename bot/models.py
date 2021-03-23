@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from datetime import date
 import telebot
 # Create your models here.
@@ -125,3 +126,7 @@ class CompleteTask(models.Model):
         verbose_name = "Задание на проверку"
         verbose_name_plural = "Задания на проверку"
 
+
+class UserTime(models.Model):
+    chat = models.IntegerField(unique=True, default=0)
+    time_from_last_message = models.TimeField(default=datetime.now(tz=None))
