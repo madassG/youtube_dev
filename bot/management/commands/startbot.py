@@ -3,7 +3,7 @@ from django.utils import timezone
 from bot import models
 from bot.bot import Bot, User, Task, CompleteTask, Question, CheckTask, FailTask, Statistic, PersonalInformation
 import telebot
-import datetime
+from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
 load_dotenv(verbose=True)
@@ -18,11 +18,11 @@ class Command(BaseCommand):
         @bot.message_handler(content_types=['text'])
         def reactions(message):
             user_bot = User(chat=message.from_user.id, bot=bot)
-            dt = datetime.datetime.now()
+            dt = datetime.now()
             try:
                 time = models.UserTime.objects.get(chat=message.from_user.id)
             except models.models.ObjectDoesNotExist:
-                time = models.UserTime(chat=message.from_user.id, time_from_last_message=dt)
+                time = models.UserTime(chat=message.from_user.id, time_from_last_message=dt - timedelta(seconds=10))
             if dt.second + dt.minute * 60 + dt.hour * 3600 - (time.time_from_last_message.second + time.time_from_last_message.hour * 3600 + time.time_from_last_message.minute * 60) > 1:
                 if user_bot.is_exist():
                     user = models.User.objects.get(chat=message.from_user.id)
@@ -65,9 +65,6 @@ class Command(BaseCommand):
                             bot.register_next_step_handler(message, user.getName)
                     else:
                         function.cabinet(message)
-            time.time_from_last_message = datetime.datetime.now(tz=None)
+            time.time_from_last_message = datetime.now(tz=None)
             time.save()
-        try:
-            bot.polling()
-        except Exception:
-            pass
+        bot.polling()

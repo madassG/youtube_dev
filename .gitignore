@@ -9,3 +9,4 @@ venv
 /logs/
 /myapp.log
 youtubedev/local_settings.py
+/.env
