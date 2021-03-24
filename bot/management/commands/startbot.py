@@ -4,12 +4,15 @@ from bot import models
 from bot.bot import Bot, User, Task, CompleteTask, Question, CheckTask, FailTask, Statistic, PersonalInformation
 import telebot
 import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv(verbose=True)
 
 
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
-        bot = telebot.TeleBot('1606504631:AAG7mt6794Kzra04ZLx4i1vZtKy_9kAD0rw')
+        bot = telebot.TeleBot(os.getenv('YT_API'))
         function = Bot(bot)
 
         @bot.message_handler(content_types=['text'])
@@ -64,5 +67,7 @@ class Command(BaseCommand):
                         function.cabinet(message)
             time.time_from_last_message = datetime.datetime.now(tz=None)
             time.save()
-
-        bot.polling()
+        try:
+            bot.polling()
+        except Exception:
+            pass

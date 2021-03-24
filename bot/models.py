@@ -2,6 +2,11 @@ from django.db import models
 from datetime import datetime
 from datetime import date
 import telebot
+import os
+from dotenv import load_dotenv
+import time
+load_dotenv(verbose=True)
+
 # Create your models here.
 
 
@@ -71,12 +76,16 @@ class Task(models.Model):
     def save(self, *args, **kwargs):
         if self.datetime == date.today() and not self.is_publish:
             self.is_publish = True
-            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            bot = telebot.TeleBot(os.getenv('YT_API'))
             users = User.objects.all()
+            i = 0
             for user in users:
                 try:
                     bot.send_message(user.chat, "У вас новое задание."
                                                 f"Задание:{self.task_name}")
+                    i += 1
+                    if i % 20 == 0:
+                        time.sleep(2)
                 except Exception:
                     pass
         super(Task, self).save(*args, **kwargs)
@@ -109,13 +118,13 @@ class CompleteTask(models.Model):
         if self.status == 'CM' and not self.okey:
             self.user.rating += self.task.task_rating
             self.user.save()
-            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            bot = telebot.TeleBot(os.getenv('YT_API'))
             bot.send_message(self.user.chat, "Вы выполнили задание!"
                                              f"\nЗадание:{self.task.task_name}"
                                              f"\n{self.comment}")
             self.okey = True
         if self.status == 'FL':
-            bot = telebot.TeleBot('1656884535:AAHCagwHxEMRPUrg3UjuJpOqMbI1Ezosxo0')
+            bot = telebot.TeleBot(os.getenv('YT_API'))
             bot.send_message(self.user.chat, "Вы провалили задание!"
                                              f"\nЗадание:{self.task.task_name}"
                                              f"\n{self.comment}")
