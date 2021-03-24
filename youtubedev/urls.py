@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/ratings/', views.ratings, name='rating'),
     path('admin/users/', views.users_page, name='users'),
     path('admin/users/export/', views.export_users, name='export')
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
