@@ -72,6 +72,7 @@ class Task(models.Model):
     task_rating = models.IntegerField(verbose_name="Количество рейтинга за выполнение", default=2)
     datetime = models.DateField(verbose_name="Дата публикации вопроса", default=date.today)
     is_publish = models.BooleanField(default=False)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.datetime == date.today() and not self.is_publish:
@@ -79,15 +80,19 @@ class Task(models.Model):
             bot = telebot.TeleBot(os.getenv('YT_API'))
             users = User.objects.all()
             i = 0
-            for user in users:
-                try:
-                    bot.send_message(user.chat, "У вас новое задание."
-                                                f"Задание:{self.task_name}")
-                    i += 1
-                    if i % 20 == 0:
-                        time.sleep(2)
-                except Exception:
-                    pass
+            if self.user is not None:
+                bot.send_message(self.user.chat, "У вас новое задание."
+                                            f"Задание:{self.task_name}")
+            else:
+                for user in users:
+                    try:
+                        bot.send_message(user.chat, "У вас новое задание."
+                                                    f"Задание:{self.task_name}")
+                        i += 1
+                        if i % 20 == 0:
+                            time.sleep(2)
+                    except Exception:
+                        pass
         super(Task, self).save(*args, **kwargs)
 
     def __str__(self):

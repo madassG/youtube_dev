@@ -139,7 +139,9 @@ class User(Registration):
 
 class Task(Bot):
     def get(self, message):
-        tasks = models.Task.objects.all().filter(is_publish=True)[:10]
+        tasks1 = models.Task.objects.all().filter(is_publish=True, user=None)[:10]
+        tasks2 = models.Task.objects.all().filter(is_publish=True, user=self.user)[:10]
+        tasks = tasks1 | tasks2
         error = False
         user = self.user
         if not error:
@@ -150,6 +152,7 @@ class Task(Bot):
                     if models.CompleteTask.objects.get(user=user, task=task):
                         continue
                 except Exception:
+                    print(task.user)
                     keys += [task.task_name]
                     self.bot.send_message(message.from_user.id, "-" * 30)
                     self.bot.send_message(message.from_user.id, f" Задание: {task.task_name} \n{task.task_text}")

@@ -22,7 +22,7 @@ class TaskAdmin(admin.ModelAdmin):
     list_display = ('task_name', 'task_rating', 'datetime')
     search_fields = ('task_name', )
     list_filter = ('datetime', )
-    fields = ('task_name', 'task_text', 'task_rating', 'datetime', 'is_publish')
+    fields = ('task_name', 'task_text', 'task_rating', 'datetime', 'is_publish', 'user')
 
 
 @admin.register(CompleteTask)
