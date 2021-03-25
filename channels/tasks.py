@@ -89,7 +89,7 @@ def check_user(user_id):
     """ Task to check info about user """
     user = User.objects.get(pk=user_id)
     channel_id = user.youtube
-    is_username = user.is_username
+    is_username = False
     if channel_id:
         items = youtube_request_channel(channel_id, is_username)
         if items is None:
