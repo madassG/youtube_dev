@@ -5,7 +5,6 @@ import googleapiclient.discovery
 from youtubedev.settings import YT_API
 from datetime import datetime
 
-
 logger = logging.getLogger(__name__)
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
@@ -35,6 +34,8 @@ def youtube_request_channel(channel_id, username, parts='contentDetails,statisti
     if response_check(response) is not None:
         logger.error(f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} : youtube_request_channel {channel_id}"
                      f" - Error code : {response_check(response)}")
+        return None
+    if 'items' not in response:
         return None
     return response['items'][0]
 
@@ -74,6 +75,8 @@ def youtube_request_video(video_id):
     if response['pageInfo']['totalResults'] == 0:
         return None
     else:
+        if 'items' not in response:
+            return None
         return response['items'][0]
 
 

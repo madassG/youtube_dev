@@ -44,6 +44,11 @@ def check_videos():
                             f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
                             f": check_videos - playlist id: {playlist_id}")
                         return
+                    if 'items' not in response:
+                        logger.error(
+                            f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
+                            f": check_videos - playlist id: {playlist_id}")
+                        return
                     videos = response['items']
                 for vid in videos:
                     pb_at_str = vid['contentDetails']['videoPublishedAt']
