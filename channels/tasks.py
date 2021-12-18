@@ -30,9 +30,15 @@ def check_videos():
         playlist_id = playlist_parcer(user.playlist_id)
         if playlist_id != '':
             response = youtube_request_playlist(playlist_id)
-            videos = response['items']
-            totalResults = response['pageInfo']['totalResults']
-            perPage = response['pageInfo']['resultsPerPage']
+            try:
+                videos = response['items']
+                totalResults = response['pageInfo']['totalResults']
+                perPage = response['pageInfo']['resultsPerPage']
+            except KeyError:
+                logger.error(
+                    f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')}"
+                    f": check_videos - key error - playlist id: {playlist_id}"
+                )
             key = False
             for i in range(math.ceil(totalResults / perPage)):
                 if key:

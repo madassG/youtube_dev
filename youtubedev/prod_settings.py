@@ -9,7 +9,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '194.87.239.17' ]
+ALLOWED_HOSTS = ['127.0.0.1', '194.87.239.17']
 
 DATABASES = {
     'default': {
