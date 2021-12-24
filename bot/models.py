@@ -77,7 +77,7 @@ class Task(models.Model):
     def save(self, *args, **kwargs):
         if self.datetime == date.today() and not self.is_publish:
             self.is_publish = True
-            bot = telebot.TeleBot(os.getenv('YT_API'))
+            bot = telebot.TeleBot(os.getenv('BOT_API'))
             users = User.objects.all()
             i = 0
             if self.user is not None:
@@ -123,13 +123,13 @@ class CompleteTask(models.Model):
         if self.status == 'CM' and not self.okey:
             self.user.rating += self.task.task_rating
             self.user.save()
-            bot = telebot.TeleBot(os.getenv('YT_API'))
+            bot = telebot.TeleBot(os.getenv('BOT_API'))
             bot.send_message(self.user.chat, "Вы выполнили задание!"
                                              f"\nЗадание:{self.task.task_name}"
                                              f"\n{self.comment}")
             self.okey = True
         if self.status == 'FL':
-            bot = telebot.TeleBot(os.getenv('YT_API'))
+            bot = telebot.TeleBot(os.getenv('BOT_API'))
             bot.send_message(self.user.chat, "Вы провалили задание!"
                                              f"\nЗадание:{self.task.task_name}"
                                              f"\n{self.comment}")

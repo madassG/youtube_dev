@@ -12,7 +12,7 @@ load_dotenv(verbose=True)
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
-        bot = telebot.TeleBot(os.getenv('YT_API'))
+        bot = telebot.TeleBot(os.getenv('BOT_API'))
         function = Bot(bot)
 
         @bot.message_handler(content_types=['text'])

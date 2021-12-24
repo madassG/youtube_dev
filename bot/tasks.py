@@ -15,7 +15,7 @@ def check_publish():
     for task in tasks:
         if task.datetime == today:
             task.is_publish = True
-            bot = telebot.TeleBot(os.getenv('YT_API'))
+            bot = telebot.TeleBot(os.getenv('BOT_API'))
             users = models.User.objects.all()
             i = 0
             for user in users:
