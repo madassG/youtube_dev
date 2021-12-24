@@ -13,8 +13,8 @@ class UserAdmin(admin.ModelAdmin):
     empty_value_display = '...'
     fields = ('name', 'youtube', 'target', 'category', 'rating')
 
-    def has_add_permission(self, request):
-        return False
+    # def has_add_permission(self, request):
+    #     return False
 
 
 @admin.register(Task)
