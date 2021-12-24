@@ -11,15 +11,15 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'check-users-every-24-hours': {
         'task': 'channels.tasks.check_accounts',
-        'schedule': crontab(minute=0, hour='*/1'),
+        'schedule': crontab(minute=1),
     },
     'check-videos-every-24-hours': {
         'task': 'channels.tasks.check_videos',
-        'schedule': crontab(minute=0, hour='*/1'),
+        'schedule': crontab(minute=1),
     },
     'check-date-publish': {
         'task': 'bot.tasks.check_publish',
-        'schedule': crontab(minute=0, hour='*/1'),
+        'schedule': crontab(minute=1),
     }
 }
 

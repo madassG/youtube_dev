@@ -85,7 +85,6 @@ def check_video(user_id, video_id):
         video.title = youtube_items['snippet']['title']
         video.viewCount = youtube_items['statistics']['viewCount']
         video.likeCount = youtube_items['statistics']['likeCount']
-        video.dislikeCount = youtube_items['statistics']['dislikeCount']
         video.commentsCount = youtube_items['statistics']['commentCount']
         video.save()
 
