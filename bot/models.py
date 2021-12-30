@@ -22,7 +22,7 @@ class Category(models.Model):
 
 
 class User(models.Model):
-    chat = models.IntegerField(verbose_name="идентификатор чата", default=0, unique=True)
+    chat = models.IntegerField(verbose_name="идентификатор чата", default=0)
     name = models.CharField(verbose_name="имя", max_length=40)
     target = models.TextField(verbose_name="цель")
     youtube = models.CharField(verbose_name="идентификатор youtube канала", max_length=200)
