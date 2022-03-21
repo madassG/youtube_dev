@@ -1,0 +1,12 @@
+/db.sqlite3
+/celerybeat-schedule.db
+.idea
+botYouTube
+Youtubedev
+pyth
+venv
+**/__pycache__
+/logs/
+/myapp.log
+youtubedev/local_settings.py
+/.env

@@ -2,7 +2,7 @@ import os
 import logging
 import googleapiclient.discovery
 
-from youtubedev.settings import YT_API
+from config.settings import YT_API
 from datetime import datetime
 
 logger = logging.getLogger(__name__)

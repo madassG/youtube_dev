@@ -1,4 +1,4 @@
-from youtubedev.celery import app
+from config.celery import app
 from bot.models import User
 from channels.models import Channel, Video
 from channels.channel import youtube_request_channel, youtube_request_playlist, youtube_request_video

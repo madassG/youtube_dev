@@ -11,14 +11,28 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from dotenv import load_dotenv
-load_dotenv(verbose=True)
 
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = os.getenv('SECRET_KEY')
 
+DEBUG = False
+
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+
+CSRF_COOKIE_SETTINGS = True
+
+USE_X_FORWARDED_HOST = True
+
+APP_ADMIN_USERNAME = os.getenv('APP_ADMIN_USERNAME')
+APP_ADMIN_EMAIL = os.getenv('APP_ADMIN_EMAIL')
+APP_ADMIN_PASSWORD = os.getenv('APP_ADMIN_PASSWORD')
 
 # Application definition
 
@@ -29,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bot',
-    'channels',
+
     'celery',
+
+    'channels',
+    'bot'
 ]
 
 MIDDLEWARE = [
@@ -44,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'youtubedev.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -62,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'youtubedev.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -116,7 +132,7 @@ STATIC_URL = '/static/'
 
 
 # REDIS settings
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = 'redis'
 REDIS_PORT = '6379'
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
@@ -170,8 +186,3 @@ LOGGING = {
         }
     },
 }
-
-try:
-    from .local_settings import *
-except ImportError:
-    from .prod_settings import *
