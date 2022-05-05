@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}YTPromote | Главная{% endblock %}
+
+{% block content %}
+{% include 'user/nav.html'%}
+<section class="profile main">
+    <h1 class="main__title">Профиль</h1>
+    <div class="profile-data">
+        <img src="{% static 'img/blank.svg' %}" alt="" class="profile-data__logo">
+        <div class="profile-data-text">
+            <p class="profile-data-text__bar">Имя: <span>{{ user.name }}</span></p>
+            <p class="profile-data-text__bar">Фамилия: <span>{{ user.surname }}</span></p>
+            <p class="profile-data-text__bar">Номер телефона: <span>{{ user.phone }}</span></p>
+            <p class="profile-data-text__bar">Почта: <span>{{ user.email }}</span></p>
+            <p class="profile-data-text__bar">Дата регистрации: <span>02.07.2021</span></p>
+            <p class="profile-data-text__bar">Телеграм: <span>{% if user.telegram_chat == -1 %}Не указан{% else %}
+                {{user.telegram_chat}}{% endif %}</span></p>
+        </div>
+        <div class="profile-data-text">
+            <p class="profile-data-text__bar">Просмотры: <span>998 876 673</span></p>
+            <p class="profile-data-text__bar">Подписчики: <span>3 876 000</span></p>
+            <p class="profile-data-text__bar">Каналы: <span>5</span></p>
+        </div>
+    </div>
+    <h1 class="main__title">Награды</h1>
+    <div class="profile-trophies">
+        {% for reward in rewards %}
+        <img src="media/{{reward.image}}" alt="" class="profile-trophies__trophy">
+        {% endfor %}
+<!--        <img src="{% static 'img/trophy.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/wreath.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/new-year.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/trophy.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/wreath.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/new-year.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/trophy.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/new-year.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/trophy.png' %}" alt="" class="profile-trophies__trophy">-->
+<!--        <img src="{% static 'img/wreath.png' %}" alt="" class="profile-trophies__trophy">-->
+    </div>
+    <h1 class="main__title">Подписка</h1>
+    <div class="subscription">
+        <p class="subscription__text">Уровень: <span class="premium" style="color: {{ user.subscription.special_color }}">{{ user.subscription.title }}</span></p>
+<!--        <p class="subscription__text">Начало: <span>01.01.2022</span></p>-->
+<!--        <p class="subscription__text">Окончание: <span>08.07.2023</span></p>-->
+        <p class="subscription__text">Максимальное количество каналов: <span>{{ user.subscription.max_channels }}</span></p>
+        <p class="subscription__text">Частота проверок 1 этапа: <span>Раз в {{ user.subscription.check_frequency }} дн.</span></p>
+        <p class="subscription__text">Длительность 1 этапа: <span>{{ user.subscription.check_time }} дн.</span></p>
+        <p class="subscription__text">Частота проверок 2 этапа: <span>Раз в {{ user.subscription.check_frequency_after_check_time }} дн.</span></p>
+        <p class="subscription__text">Длительность 2 этапа: <span>{{ user.subscription.check_time_2 }} дн.</span></p>
+        <p class="subscription__text subscription__text__margin">{{ user.subscription.desc | safe }}</p>
+    </div>
+</section>
+{% endblock %}

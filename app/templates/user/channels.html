@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}YTPromote | Мои каналы{% endblock %}
+
+{% block content %}
+{% include 'user/nav.html'%}
+    <section class="channels main">
+        <h1 class="main__title">Каналы</h1>
+        <div class="channels-block">
+            <div class="channels-block-header">
+                <div class="channels-block-header__text">
+                    <p class="channels-block-header__id">ID: hd79DS09k</p>
+                    <h2 class="channels-block-header__title">Мистер Макс</h2>
+                    <p class="channels-block-header__date">Дата добавления: 27.09.2022</p>
+                </div>
+                <div class="channels-block-header__picture">
+                    <img src="{% static 'img/max.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="channels-block-content">
+                <div class="channels-block-content__buttons">
+                    <a href="#" class="channels__button channels-block-content__button">
+                        <p class="channels__button__text">Подробнее</p>
+                    </a>
+
+                    <a href="#" class="channels__button channels-block-content__button__delete">
+                        <p class="channels__button__text">Удалить</p>
+                    </a>
+                </div>
+                <div class="channels-block-content-statistics">
+                    <div class="channels-block-content-statistics-row">
+                        <p class="channels-block-content-statistics-row__number">7 980 879</p>
+                        <img src="{% static 'img/people.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">подписчики</p>
+                    </div>
+
+                    <div class="channels-block-content-statistics-row">
+                        <p class="channels-block-content-statistics-row__number">798 980 879</p>
+                        <img src="{% static 'img/eye.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">просмотры</p>
+                    </div>
+
+                    <div class="channels-block-content-statistics-row">
+                        <p class="channels-block-content-statistics-row__number">5 690</p>
+                        <img src="{% static 'img/play-button.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">видео</p>
+                    </div>
+
+                    <div class="channels-block-content-statistics-row">
+                        <p class="channels-block-content-statistics-row__number">90 009 874</p>
+                        <img src="{% static 'img/like.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">лайки</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="channels-block channels__add"><img src="{% static 'img/plus.png' %}" alt=""></a>
+    </section>
+{% endblock %}

@@ -16,18 +16,21 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, reverse
-from django.shortcuts import redirect
 from django.conf.urls.static import static
+from django.views.generic.base import TemplateView
+
 from channels import views
 
 urlpatterns = [
-    path('', lambda request: redirect('admin/', permanent=True)),
+    path('', include('users.urls')),
+    path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('admin/users/<int:user_id>/', views.user_page, name='user'),
     path('admin/ratings/', views.ratings, name='rating'),
     path('admin/users/', views.users_page, name='users'),
-    path('admin/users/export/', views.export_users, name='export')
-]
-#+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('admin/users/export/', views.export_users, name='export'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

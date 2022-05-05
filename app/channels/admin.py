@@ -1,5 +1,5 @@
 from django.contrib import admin
-from channels.models import Channel, Video
+from channels.models import Channel, Video, Account
 
 
 @admin.register(Channel)
@@ -11,10 +11,21 @@ class ChannelAdmin(admin.ModelAdmin):
 
 
 @admin.register(Video)
-class ChannelAdmin(admin.ModelAdmin):
-    list_display = ('owner', 'title', 'viewCount', 'likeCount', 'dislikeCount', 'commentsCount')
-    search_fields = ('owner__name', 'owner__chat', 'title')
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('owner', 'title', 'viewCount', 'likeCount', 'dislikeCount', 'commentsCount', 'published_at')
+    search_fields = ('title', )
     list_filter = ('owner', )
+
+
+@admin.register(Account)
+class AccountAdmin(admin.ModelAdmin):
+    list_display = (
+        'owner', 'youtube', 'category', 'subs_day', 'subs_week', 'subs_month',
+        'subs_quarter', 'views_day', 'views_week', 'views_month', 'views_quarter'
+    )
+    list_filter = ('category',)
+    search_fields = ('owner', 'name', 'youtube')
+    empty_value_display = '...'
 
 
 admin.site.index_title = 'Администрирование'

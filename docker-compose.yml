@@ -5,17 +5,18 @@ services:
     build:
       context: app
     command: >
-      sh -c "python manage.py migrate && python manage.py appcreatesuperuser && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+      sh -c "python manage.py migrate && python manage.py appcreatesuperuser && gunicorn config.wsgi:application -w 2 -b :8000 --reload"
     volumes:
       - ./app/static:/home/app/web/static
       - ./app/media:/home/app/web/media
+      - .:/code
     expose:
       - 8000
     env_file:
       - ./.env.prod
     depends_on:
       - db
-    restart: on-failure
+    restart: always
   db:
     image: postgres:13.0-alpine
     volumes:

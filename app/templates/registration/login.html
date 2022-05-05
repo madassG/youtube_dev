@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+<section class="main login">
+    <div class="login-block">
+        <div class="login-block-header">
+            <img src="{% static 'img/youtube.png' %}" alt="" class="login-block-header__image">
+            <p class="login-block-header__title">YTPromote</p>
+        </div>
+        <hr>
+        <form class="login-block-content" method="post">
+            <p class="login-block-content__title">Авторизация</p>
+            {% csrf_token %}
+            <input type="text" name="username" autofocus autocapitalize="none" class="login-block-content__input"
+                   autocomplete="email" placeholder="почта" required>
+            <input type="password" name="password" class="login-block-content__input" autocomplete="current-password"
+                   placeholder="пароль" required>
+            {% if form.errors %}
+                <p class="login-block-content__error">Введите корректные данные</p>
+            {% endif %}
+            <button type="submit" class="login-block-content__button main__button">ВОЙТИ</button>
+            <p class="login-block-content__additional">Нет аккаунта? Пишите в <a href="https://www.google.com" target="_blank">telegram</a></p>
+        </form>
+    </div>
+</section>
+{% endblock %}

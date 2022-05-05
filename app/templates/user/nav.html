@@ -1,0 +1,58 @@
+{% load static %}
+<div class="navigation">
+    <div class="navigation-header">
+        <img class="navigation-header__image" src="{% static 'img/youtube.png' %}" alt="">
+        <p class="navigation-header__title">YTPromote</p>
+    </div>
+
+    <hr>
+
+    {% if request.path == '/' %}
+    <a href="#" class="navigation-link navigation-link__active">
+        <img src="{% static 'img/home_black.png' %}" alt="Домик" class="navigation-link__image">
+        <p class="navigation-link__text">Главная</p>
+    </a>
+    {% else %}
+    <a href="/" class="navigation-link">
+        <img src="{% static 'img/home.png' %}" alt="Домик" class="navigation-link__image">
+        <p class="navigation-link__text">Главная</p>
+    </a>
+    {% endif %}
+
+    {% if request.path == '/channels' %}
+    <a href="{% url 'channels' %}" class="navigation-link navigation-link__active">
+        <img src="{% static 'img/connection_black.png' %}" alt="Картинка изображающая связи" class="navigation-link__image">
+        <p class="navigation-link__text">Каналы</p>
+    </a>
+    {% else %}
+    <a href="{% url 'channels' %}" class="navigation-link">
+        <img src="{% static 'img/connection.png' %}" alt="Картинка изображающая связи" class="navigation-link__image">
+        <p class="navigation-link__text">Каналы</p>
+    </a>
+    {% endif %}
+
+
+    {% if request.path == '/settings' %}
+    <a href="#" class="navigation-link navigation-link__active">
+        <img src="{% static 'img/settings_black.png' %}" alt="Шестеренка" class="navigation-link__image">
+        <p class="navigation-link__text">Настройки</p>
+    </a>
+    {% else %}
+    <a href="#" class="navigation-link">
+        <img src="{% static 'img/settings.png' %}" alt="Шестеренка" class="navigation-link__image">
+        <p class="navigation-link__text">Настройки</p>
+    </a>
+    {% endif %}
+
+    {% if request.path == '/help' %}
+    <a href="#" class="navigation-link navigation-link__active">
+        <img src="{% static 'img/question_black.png' %}" alt="Знак вопроса в кружке" class="navigation-link__image">
+        <p class="navigation-link__text">Поддержка</p>
+    </a>
+    {% else %}
+    <a href="#" class="navigation-link">
+        <img src="{% static 'img/question.png' %}" alt="Знак вопроса в кружке" class="navigation-link__image">
+        <p class="navigation-link__text">Поддержка</p>
+    </a>
+    {% endif %}
+</div>

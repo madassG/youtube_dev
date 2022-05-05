@@ -1,5 +1,5 @@
 from bot.models import User
-from channels.models import Channel, Video
+from channels.models import Channel, Video, Account
 from datetime import datetime, timedelta
 from django.forms.models import model_to_dict
 
@@ -16,7 +16,7 @@ def analyse_channel(user_id):
 
 
 def channel_delay(user_id, time=0, need_notes=True):
-    user = User.objects.get(pk=user_id)
+    user = Account.objects.get(pk=user_id)
     if time != 0:
         now = datetime.now().date()
         delta = timedelta(days=time)
@@ -71,7 +71,7 @@ def channel_delay(user_id, time=0, need_notes=True):
 
 
 def video_data(user_id):
-    user = User.objects.get(pk=user_id)
+    user = Account.objects.get(pk=user_id)
     videos = Video.objects.filter(owner=user).order_by('-published_at')
     ids = []
     for video_id in videos.values('url_id'):
