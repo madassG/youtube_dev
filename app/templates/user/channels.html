@@ -7,55 +7,69 @@
 {% include 'user/nav.html'%}
     <section class="channels main">
         <h1 class="main__title">Каналы</h1>
+        {% for account in accounts %}
         <div class="channels-block">
             <div class="channels-block-header">
                 <div class="channels-block-header__text">
-                    <p class="channels-block-header__id">ID: hd79DS09k</p>
-                    <h2 class="channels-block-header__title">Мистер Макс</h2>
-                    <p class="channels-block-header__date">Дата добавления: 27.09.2022</p>
+                    <p class="channels-block-header__id">ID: {{ account.youtube }}</p>
+                    <h2 class="channels-block-header__title">
+                    {% if account.name %}{{ account.name|slice:":18" }}{% else %}Неизвестно{% endif %}
+                    </h2>
+                    <p class="channels-block-header__date">Добавлен: {{ account.registration_date }}</p>
                 </div>
                 <div class="channels-block-header__picture">
-                    <img src="{% static 'img/max.png' %}" alt="">
+
+                    <img src="{% if account.banner_url %}{{ account.banner_url }}{% else %}{% static 'img/blank.svg' %}{% endif %}" alt="">
                 </div>
             </div>
 
             <div class="channels-block-content">
                 <div class="channels-block-content__buttons">
-                    <a href="#" class="channels__button channels-block-content__button">
+                    <a href="{% url 'channel' account.pk %}" class="channels__button channels-block-content__button">
                         <p class="channels__button__text">Подробнее</p>
                     </a>
 
-                    <a href="#" class="channels__button channels-block-content__button__delete">
+                    <a href="{% url 'delete_channel' account.pk %}" class="channels__button channels-block-content__button__delete">
                         <p class="channels__button__text">Удалить</p>
                     </a>
                 </div>
                 <div class="channels-block-content-statistics">
                     <div class="channels-block-content-statistics-row">
-                        <p class="channels-block-content-statistics-row__number">7 980 879</p>
+                        <p class="channels-block-content-statistics-row__number">{{ account.data.subscribers }}</p>
                         <img src="{% static 'img/people.png' %}" alt="">
                         <p class="channels-block-content-statistics-row__type">подписчики</p>
                     </div>
 
                     <div class="channels-block-content-statistics-row">
-                        <p class="channels-block-content-statistics-row__number">798 980 879</p>
+                        <p class="channels-block-content-statistics-row__number">{{ account.data.total_views }}</p>
                         <img src="{% static 'img/eye.png' %}" alt="">
                         <p class="channels-block-content-statistics-row__type">просмотры</p>
                     </div>
 
                     <div class="channels-block-content-statistics-row">
-                        <p class="channels-block-content-statistics-row__number">5 690</p>
+                        <p class="channels-block-content-statistics-row__number">{{ account.data.videos_quantity }}</p>
                         <img src="{% static 'img/play-button.png' %}" alt="">
                         <p class="channels-block-content-statistics-row__type">видео</p>
                     </div>
 
                     <div class="channels-block-content-statistics-row">
-                        <p class="channels-block-content-statistics-row__number">90 009 874</p>
-                        <img src="{% static 'img/like.png' %}" alt="">
-                        <p class="channels-block-content-statistics-row__type">лайки</p>
+                        {% if account.data.created_at %}
+                        <p class="channels-block-content-statistics-row__number">{{ account.data.created_at|date:"m.d.y" }}</p>
+                        <img src="{% static 'img/time.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">{{ account.data.created_at|date:"H:m" }}</p>
+                        {% else %}
+                        <p class="channels-block-content-statistics-row__number">не было</p>
+                        <img src="{% static 'img/time.png' %}" alt="">
+                        <p class="channels-block-content-statistics-row__type">проверки</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-        <a href="#" class="channels-block channels__add"><img src="{% static 'img/plus.png' %}" alt=""></a>
+        {% endfor %}
+
+        {% if max_accs > accounts|length %}
+        <a href="{% url 'add_channel' %}" class="channels-block channels__add"><img src="{% static 'img/plus.png' %}" alt=""></a>
+        {% endif %}
     </section>
 {% endblock %}

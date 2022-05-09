@@ -39,6 +39,7 @@ APP_ADMIN_PASSWORD = os.getenv('APP_ADMIN_PASSWORD')
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+USE_THOUSAND_SEPARATOR = True
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

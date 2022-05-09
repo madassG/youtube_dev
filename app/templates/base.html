@@ -7,9 +7,14 @@
   <title>{% block title %}YTPromote{% endblock %}</title>
   <link rel="shortcut icon" href="{% static 'img/youtube.png' %}" type="image/png">
   <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    {% block extrastyle %}
+    {% endblock %}
 </head>
 <body>
     {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/script.min.js' %}"></script>
+    {% block extrascripts %}
     {% endblock %}
 </body>
 </html>

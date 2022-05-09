@@ -17,7 +17,7 @@ youtube = googleapiclient.discovery.build(
     api_service_name, api_version, developerKey=DEVELOPER_KEY)
 
 
-def youtube_request_channel(channel_id, username, parts='contentDetails,statistics'):
+def youtube_request_channel(channel_id, username, parts='contentDetails,statistics,brandingSettings'):
     """ Youtube API request function to get channel info """
     if username:
         request = youtube.channels().list(

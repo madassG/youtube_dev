@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}YTPromote | Подтверждение{% endblock %}
+{% block content %}
+    <section class="main login">
+        <div class="login-block login-block__delete">
+            <div class="login-block-header">
+                <p class="login-block-header__title">Подтверждение</p>
+            </div>
+            <hr>
+            <form class="login-block-content" method="post" autocomplete="off" id="delete_form">
+                {% csrf_token %}
+                <p class="login-block-content__title">Данное действие не может быть отменено, аккаунт будет отвязан и вся собранная о нём информация будет удалена. Если вы действительно уверены и хотите удалить привязанный YouTube канал <span>«{{ name }}»</span>, то введите в поле ниже:<br><br><i>«Я подтверждаю удаление аккаунта»</i></p>
+                <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                <input type="text" class="login-block-content__input" placeholder="Я подтверждаю удаление аккаунта" id="delete_agreement" required>
+
+                <button type="submit" class="login-block-content__button main__button disabled-button" id="delete_channel" disabled>Удалить</button>
+                <p class="login-block-content__additional"><a href="{% url 'channels' %}">Отмена</a></p>
+            </form>
+        </div>
+    </section>
+{% endblock %}

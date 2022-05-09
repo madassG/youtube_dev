@@ -96,12 +96,12 @@ def video_get_dict(video_id):
             'likes': change['likeCount'],
             'dlikes': change['dislikeCount'],
             'comms': change['commentsCount'],
-            'date': datetime.strftime(change['created_at'].date(), '%Y-%m-%d')
+            'date': change['created_at'].date()
         })
     video_dict = {
         'url': 'https://www.youtube.com/watch?v=' + data.url_id,
-        'publish_date': datetime.strftime(data.published_at, '%Y-%m-%d %H:%m'),
-        'end': datetime.strftime(data.created_at, '%Y-%m-%d %H:%m'),
+        'publish_date': data.published_at,
+        'end': data.created_at,
         'avatar': data.avatar,
         'title': data.title,
         'changes': changes,

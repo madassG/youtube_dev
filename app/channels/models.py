@@ -20,12 +20,16 @@ class Account(models.Model):
     owner = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Владелец', related_name='accounts')
     rewards = models.ManyToManyField(Reward, default=None, blank=True)
 
-    purpose = models.TextField(blank=True, verbose_name='Цель')
+    purpose = models.TextField(blank=True, verbose_name="Цель")
     youtube = models.CharField(verbose_name="Идентификатор youtube канала", max_length=200)
     category = models.ForeignKey(Niche, on_delete=models.PROTECT, null=True, blank=True,
                                  verbose_name="Категория")
 
     playlist_id = models.CharField(max_length=200, blank=True, verbose_name="Плейлист youtube канала")
+    name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Заголовок канала")
+    banner_url = models.CharField(max_length=600, blank=True, null=True, verbose_name="Аватарка канала")
+    channel_country = models.CharField(max_length=600, blank=True, null=True, verbose_name="Страна канала")
+    channel_keywords = models.TextField(blank=True, null=True, verbose_name="Указанные ключевые слова")
 
     subs_day = models.IntegerField(default=0, verbose_name="подписчики за день")
     subs_week = models.IntegerField(default=0, verbose_name="подписчики за неделю")

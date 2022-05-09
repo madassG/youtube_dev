@@ -122,6 +122,10 @@ def check_user(user_id):
                 f": check_user - user id: {user_id}")
             return
         user.playlist_id = items['contentDetails']['relatedPlaylists']['uploads']
+        user.name = items['brandingSettings'].get('channel').get('title')
+        user.channel_keywords = items['brandingSettings'].get('channel').get('keywords')
+        user.channel_country = items['brandingSettings'].get('channel').get('country')
+        user.banner_url = items['brandingSettings'].get('image').get('bannerExternalUrl')
         user.save()
 
         data = items['statistics']

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}YTPromote | Добавить{% endblock %}
+{% block content %}
+    <section class="main login add">
+        <div class="login-block add-block">
+            <div class="login-block-header add-block-header">
+                <p class="login-block-header__title add-block-header__title">Добавить канал</p>
+            </div>
+            <hr>
+            <form class="login-block-content add-block-content" method="post">
+                {% csrf_token %}
+                <div class="add-block-content__wrapper">
+                    <div class="add-block-content__label__wrapper"><label class="add-block-content__label">ID Канала</label><div class="add-block-content__info"><img src="{% static 'img/info.png' %}" alt=""><div style="display: none">Перейдите в Настройки > Расширенные настройки > Идентификатор канала.</div></div></div>
+                    <input type="text" name="channel_id" class="login-block-content__input add-block-content__input" placeholder="ExampleId111" value="{{ form.channel_id.value }}" required>
+
+                    {% for err in form.errors.channel_id %}
+                     <p class="login-block-content__error add-block-content__error">{{ err }}</p>
+                    {% endfor %}
+                </div>
+
+                <div class="add-block-content__wrapper">
+                    <label class="add-block-content__label">Цель</label>
+                    <textarea name="purpose" class="login-block-content__input add-block-content__input add-block-content__input__large" placeholder="Хочу стать великим...">{{ form.purpose.value }}</textarea>
+                    {% for err in form.errors.purpose %}
+                     <p class="login-block-content__error add-block-content__error">{{ err }}</p>
+                    {% endfor %}
+                </div>
+
+
+                <button type="submit" class="login-block-content__button add-block-content__button main__button">ДОБАВИТЬ</button>
+                <p class="login-block-content__additional add-block-content__additional"><a href="{% url 'channels' %}">Отмена</a></p>
+            </form>
+        </div>
+    </section>
+{% endblock %}
