@@ -42,6 +42,7 @@
     </div>
     <h1 class="main__title">Подписка</h1>
     <div class="subscription">
+        {% if user.subscription %}
         <p class="subscription__text">Уровень: <span class="premium" style="color: {{ user.subscription.special_color }}">{{ user.subscription.title }}</span></p>
 <!--        <p class="subscription__text">Начало: <span>01.01.2022</span></p>-->
 <!--        <p class="subscription__text">Окончание: <span>08.07.2023</span></p>-->
@@ -51,6 +52,9 @@
         <p class="subscription__text">Частота проверок 2 этапа: <span>Раз в {{ user.subscription.check_frequency_after_check_time }} дн.</span></p>
         <p class="subscription__text">Длительность 2 этапа: <span>{{ user.subscription.check_time_2 }} дн.</span></p>
         <p class="subscription__text subscription__text__margin">{{ user.subscription.desc | safe }}</p>
+        {% else %}
+        <p class="subscription__text">Уровень: <span class="premium" style="color: #FF0000">Нет</span></p>
+        {% endif %}
     </div>
 </section>
 {% endblock %}

@@ -13,7 +13,8 @@ def home(request):
     for acc in current_user.accounts.all():
         rewards.append(*list(acc.rewards.all()))
 
-    current_user.subscription.desc = current_user.subscription.desc.replace('\n', '<br>')
+    if current_user.subscription:
+        current_user.subscription.desc = current_user.subscription.desc.replace('\n', '<br>')
 
     return render(request, 'user/home.html', {'user': current_user, 'rewards': rewards})
 

@@ -1,5 +1,8 @@
 from django.contrib import admin
 from users.models import Reward, Subscription, Client
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+from config.settings import EMAIL_TEMPLATE
 
 from .forms import ClientCreationForm, ClientChangeForm
 
@@ -58,7 +61,10 @@ class ClientAdmin(admin.ModelAdmin):
         else:
             if not obj.password:
                 obj.password = Client.objects.make_random_password(length=16)
-                # TODO: send a password to email
-                print(obj.password)
+                html_message = render_to_string(EMAIL_TEMPLATE, {'user': {'username': obj.email,
+                                                                          'password': obj.password}, })
+                message = EmailMessage('Регистрация в YTPromote', html_message, "noreply@ytpromote.com", [obj.email])
+                message.content_subtype = 'html'
+                message.send()
             obj.set_password(obj.password)
         obj.save()
