@@ -3,158 +3,171 @@
 
 {% block title %}YTPromote | Главная{% endblock %}
 
-
 {% block content %}
-
 <div class="channel__behind"><a href="{% url 'channels' %}">Назад к каналам</a></div>
 <section class="main channel">
-        <h1 class="main__title">Канал {% if channel.name %}{{ channel.name }}{% else %}???{% endif %}</h1>
-        <div class="channel-main">
-            <a href="https://www.youtube.com/channel/{{ channel.youtube }}" target="_blank" class="channel-block channel-main-profile">
-                <div class="channel-main-profile-content">
-                    <p class="channel-main-profile-content__id">ID: {{ channel.youtube }}</p>
-                    <h2 class="channel-main-profile-content__title">{% if channel.name %}{{ channel.name }}{% else %}???{% endif %}</h2>
-                    <div class="channel-main-profile-content__data">
-                        <span>Добавлен:</span>
-                        <span>{{ channel.registration_date }}</span>
-                    </div>
-                    <div class="channel-main-profile-content__data">
-                        <span>Подписчики:</span>
-                        <span>{{ channel.data.subscribers }}</span>
-                    </div>
-                    <div class="channel-main-profile-content__data">
-                        <span>Просмотры:</span>
-                        <span>{{ channel.data.total_views }}</span>
-                    </div>
-                    <div class="channel-main-profile-content__data">
-                        <span>Количество видео:</span>
-                        <span>{{ channel.data.videos_quantity }}</span>
-                    </div>
+    <h1 class="main__title">Канал {% if channel.name %}{{ channel.name }}{% else %}???{% endif %}</h1>
+    <div class="channel-main">
+        <a href="https://www.youtube.com/channel/{{ channel.youtube }}" target="_blank" class="channel-block channel-main-profile">
+            <div class="channel-main-profile-content">
+                <p class="channel-main-profile-content__id">ID: {{ channel.youtube }}</p>
+                <h2 class="channel-main-profile-content__title">{% if channel.name %}{{ channel.name }}{% else %}???{% endif %}</h2>
+                <div class="channel-main-profile-content__data">
+                    <span>Добавлен:</span>
+                    <span>{{ channel.registration_date }}</span>
                 </div>
-                <div class="channel-main-profile-picture">
-                    <img src="{% static 'img/blank.svg' %}" alt="">
+                <div class="channel-main-profile-content__data">
+                    <span>Подписчики:</span>
+                    <span>{{ channel.data.subscribers }}</span>
                 </div>
-            </a>
-            <div class="channel-block channel-main-purpose">
-                <p class="channel-main-purpose__title">ЦЕЛЬ</p>
-                <p class="channel-main-purpose__text">{% if channel.purpose %}{{ channel.purpose }}{% else %}Не указана{% endif %}</p>
+                <div class="channel-main-profile-content__data">
+                    <span>Просмотры:</span>
+                    <span>{{ channel.data.total_views }}</span>
+                </div>
+                <div class="channel-main-profile-content__data">
+                    <span>Количество видео:</span>
+                    <span>{{ channel.data.videos_quantity }}</span>
+                </div>
+            </div>
+            <div class="channel-main-profile-picture">
+                <img src="{% static 'img/blank.svg' %}" alt="">
+            </div>
+        </a>
+        <div class="channel-block channel-main-purpose">
+            <p class="channel-main-purpose__title">ЦЕЛЬ</p>
+            <p class="channel-main-purpose__text">{% if channel.purpose %}{{ channel.purpose }}{% else %}Не указана{% endif %}</p>
+        </div>
+    </div>
+
+    <h1 class="main__title">Динамика</h1>
+    <div class="channel-rewards">
+        <div class="channel-block channel-rewards-data">
+            <p class="channel-rewards-data__title">День</p>
+            <div class="channel-rewards-data-piece">
+                <p>Подписчики</p>
+                <span style="color: {% if changes.day.change.subs > 0 %}#00FF00{% elif changes.day.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.subs >= 0%}+{% endif %}{{ changes.day.change.subs }}</span>
+            </div>
+            <div class="channel-rewards-data-piece">
+                <p>Просмотры</p>
+                <span style="color: {% if changes.day.change.views > 0 %}#00FF00{% elif changes.day.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.views >= 0%}+{% endif %}{{ changes.day.change.views }}</span>
+            </div>
+            <div class="channel-rewards-data-piece">
+                <p>Количество видео</p>
+                <span style="color: {% if changes.day.change.vids > 0 %}#00FF00{% elif changes.day.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.vids >= 0%}+{% endif %}{{ changes.day.change.vids }}</span>
             </div>
         </div>
 
-        <h1 class="main__title">Динамика</h1>
-        <div class="channel-rewards">
-            <div class="channel-block channel-rewards-data">
-                <p class="channel-rewards-data__title">День</p>
-                <div class="channel-rewards-data-piece">
-                    <p>Подписчики</p>
-                    <span style="color: {% if changes.day.change.subs > 0 %}#00FF00{% elif changes.day.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.subs >= 0%}+{% endif %}{{ changes.day.change.subs }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Просмотры</p>
-                    <span style="color: {% if changes.day.change.views > 0 %}#00FF00{% elif changes.day.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.views >= 0%}+{% endif %}{{ changes.day.change.views }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Количество видео</p>
-                    <span style="color: {% if changes.day.change.vids > 0 %}#00FF00{% elif changes.day.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.day.change.vids >= 0%}+{% endif %}{{ changes.day.change.vids }}</span>
-                </div>
+        <div class="channel-block channel-rewards-data">
+            <p class="channel-rewards-data__title">Неделя</p>
+            <div class="channel-rewards-data-piece">
+                <p>Подписчики</p>
+                <span style="color: {% if changes.week.change.subs > 0 %}#00FF00{% elif changes.week.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.subs >= 0%}+{% endif %}{{ changes.week.change.subs }}</span>
             </div>
-
-            <div class="channel-block channel-rewards-data">
-                <p class="channel-rewards-data__title">Неделя</p>
-                <div class="channel-rewards-data-piece">
-                    <p>Подписчики</p>
-                    <span style="color: {% if changes.week.change.subs > 0 %}#00FF00{% elif changes.week.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.subs >= 0%}+{% endif %}{{ changes.week.change.subs }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Просмотры</p>
-                    <span style="color: {% if changes.week.change.views > 0 %}#00FF00{% elif changes.week.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.views >= 0%}+{% endif %}{{ changes.week.change.views }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Количество видео</p>
-                    <span style="color: {% if changes.week.change.vids > 0 %}#00FF00{% elif changes.week.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.vids >= 0%}+{% endif %}{{ changes.week.change.vids }}</span>
-                </div>
+            <div class="channel-rewards-data-piece">
+                <p>Просмотры</p>
+                <span style="color: {% if changes.week.change.views > 0 %}#00FF00{% elif changes.week.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.views >= 0%}+{% endif %}{{ changes.week.change.views }}</span>
             </div>
-
-            <div class="channel-block channel-rewards-data">
-                <p class="channel-rewards-data__title">Месяц</p>
-                <div class="channel-rewards-data-piece">
-                    <p>Подписчики</p>
-                    <span style="color: {% if changes.month.change.subs > 0 %}#00FF00{% elif changes.month.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.subs >= 0%}+{% endif %}{{ changes.month.change.subs }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Просмотры</p>
-                    <span style="color: {% if changes.month.change.views > 0 %}#00FF00{% elif changes.month.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.views >= 0%}+{% endif %}{{ changes.month.change.views }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Количество видео</p>
-                    <span style="color: {% if changes.month.change.vids > 0 %}#00FF00{% elif changes.month.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.vids >= 0%}+{% endif %}{{ changes.month.change.vids }}</span>
-                </div>
-            </div>
-            <div class="channel-block channel-rewards-data">
-                <p class="channel-rewards-data__title">Квартал</p>
-                <div class="channel-rewards-data-piece">
-                    <p>Подписчики</p>
-                    <span style="color: {% if changes.quarter.change.subs > 0 %}#00FF00{% elif changes.quarter.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.subs >= 0%}+{% endif %}{{ changes.quarter.change.subs }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Просмотры</p>
-                    <span style="color: {% if changes.quarter.change.views > 0 %}#00FF00{% elif changes.quarter.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.views >= 0%}+{% endif %}{{ changes.quarter.change.views }}</span>
-                </div>
-                <div class="channel-rewards-data-piece">
-                    <p>Количество видео</p>
-                    <span style="color: {% if changes.quarter.change.vids > 0 %}#00FF00{% elif changes.quarter.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.vids >= 0%}+{% endif %}{{ changes.quarter.change.vids }}</span>
-                </div>
+            <div class="channel-rewards-data-piece">
+                <p>Количество видео</p>
+                <span style="color: {% if changes.week.change.vids > 0 %}#00FF00{% elif changes.week.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.week.change.vids >= 0%}+{% endif %}{{ changes.week.change.vids }}</span>
             </div>
         </div>
-        <div id="app" >
-          {{ data|json_script:"data"}}
-          {{ changes|json_script:"changes"}}
-          <line-chart v-bind:label="label" v-bind:data="data" v-bind:labels="labels" v-bind:options="options" v-bind:time="time" v-bind:type="type" ref="LineChart"></line-chart>
-          <div style="display: flex; justify-content: space-between; padding-top: 20px;">
-            <div>
-              <div>
-                <input class="form-check-input" type="radio" name="type" id="type1" v-model="type" value="subs">
-                <label class="form-check-label" for="type1">Подписчики</label>
-              </div>
-              <div>
-                <input type="radio" name="type" id="type2" v-model="type" value="views">
-                <label for="type2">Просмотры</label>
-              </div>
-              <div>
-                <input type="radio" name="type" id="type3" v-model="type" value="vids">
-                <label for="type3">Количество видео</label>
-              </div>
+
+        <div class="channel-block channel-rewards-data">
+            <p class="channel-rewards-data__title">Месяц</p>
+            <div class="channel-rewards-data-piece">
+                <p>Подписчики</p>
+                <span style="color: {% if changes.month.change.subs > 0 %}#00FF00{% elif changes.month.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.subs >= 0%}+{% endif %}{{ changes.month.change.subs }}</span>
             </div>
-            <div>
-                <div>
-                    <input type="radio" name="time" id="time1" v-model="time" value="week" checked>
-                    <label for="time1">Неделя</label>
-                </div>
-                <div>
-                  <input type="radio" name="time" id="time2" v-model="time" value="month">
-                  <label for="time2">Месяц</label>
-                </div>
-                <div>
-                  <input type="radio" name="time" id="time3" v-model="time" value="quarter">
-                  <label for="time3">Квартал</label>
-                </div>
+            <div class="channel-rewards-data-piece">
+                <p>Просмотры</p>
+                <span style="color: {% if changes.month.change.views > 0 %}#00FF00{% elif changes.month.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.views >= 0%}+{% endif %}{{ changes.month.change.views }}</span>
             </div>
+            <div class="channel-rewards-data-piece">
+                <p>Количество видео</p>
+                <span style="color: {% if changes.month.change.vids > 0 %}#00FF00{% elif changes.month.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.month.change.vids >= 0%}+{% endif %}{{ changes.month.change.vids }}</span>
+            </div>
+        </div>
+        <div class="channel-block channel-rewards-data">
+            <p class="channel-rewards-data__title">Квартал</p>
+            <div class="channel-rewards-data-piece">
+                <p>Подписчики</p>
+                <span style="color: {% if changes.quarter.change.subs > 0 %}#00FF00{% elif changes.quarter.change.subs < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.subs >= 0%}+{% endif %}{{ changes.quarter.change.subs }}</span>
+            </div>
+            <div class="channel-rewards-data-piece">
+                <p>Просмотры</p>
+                <span style="color: {% if changes.quarter.change.views > 0 %}#00FF00{% elif changes.quarter.change.views < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.views >= 0%}+{% endif %}{{ changes.quarter.change.views }}</span>
+            </div>
+            <div class="channel-rewards-data-piece">
+                <p>Количество видео</p>
+                <span style="color: {% if changes.quarter.change.vids > 0 %}#00FF00{% elif changes.quarter.change.vids < 0 %}#FF0000{% else %}#000{% endif %}">{% if changes.quarter.change.vids >= 0%}+{% endif %}{{ changes.quarter.change.vids }}</span>
+            </div>
+        </div>
+    </div>
+    <div id="app">
+      {{ data|json_script:"data"}}
+      {{ changes|json_script:"changes"}}
+      <line-chart v-bind:label="label" v-bind:data="data" v-bind:labels="labels" v-bind:options="options" v-bind:time="time" v-bind:type="type" ref="LineChart"></line-chart>
+      <div style="display: flex; justify-content: space-between; padding-top: 20px;">
+        <div>
+          <div>
+            <input class="form-check-input" type="radio" name="type" id="type1" v-model="type" value="subs">
+            <label class="form-check-label" for="type1">Подписчики</label>
+          </div>
+          <div>
+            <input type="radio" name="type" id="type2" v-model="type" value="views">
+            <label for="type2">Просмотры</label>
+          </div>
+          <div>
+            <input type="radio" name="type" id="type3" v-model="type" value="vids">
+            <label for="type3">Количество видео</label>
           </div>
         </div>
+        <div>
+            <div>
+                <input type="radio" name="time" id="time1" v-model="time" value="week" checked>
+                <label for="time1">Неделя</label>
+            </div>
+            <div>
+              <input type="radio" name="time" id="time2" v-model="time" value="month">
+              <label for="time2">Месяц</label>
+            </div>
+            <div>
+              <input type="radio" name="time" id="time3" v-model="time" value="quarter">
+              <label for="time3">Квартал</label>
+            </div>
+        </div>
+      </div>
+    </div>
 
-        <h1 class="main__title">Видео</h1>
+    <h1 class="main__title">Видео</h1>
+    <div class="main__video__wrapper infinite-container">
         {% if not videos %}
             На этом канале ещё нет анализированных видео.
         {% endif %}
         {% for video in videos %}
             {% include 'user/video-block.html' %}
         {% endfor %}
-    </section>
+    </div>
+
+
+    {% if videos.has_next %}
+    <a href="?page={{ videos.next_page_number }}" class="infinite-more-link"></a>
+    {% endif %}
+
+    <div class="loading-indicator" style="display: none; text-align: center; padding-top: 20px;"><span>Loading...</span></div>
+</section>
 
 <script src="{% static 'js/chart.min.js' %}"></script>
 <script src="{% static 'js/vue.js' %}"></script>
 <script src="{% static 'js/vue-chart.js' %}"></script>
 <script src="{% static 'vue_templates/line-chart.js'%}"></script>
 <script src="{% static 'js/vue-script.js' %}"></script>
+
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/infinite.min.js' %}"></script>
+<script src="{% static 'js/pages-lazy-load.js' %}"></script>
+
 
 {% endblock %}

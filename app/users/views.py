@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from channels.models import Account, Channel, Video
 from channels.forms import ChannelForm
 from channels.analysis import analyse_channel, video_data
+from django.core.paginator import Paginator
 
 
 @login_required(login_url='login')
@@ -60,8 +61,13 @@ def channel(request, channel_id: int):
     else:
         ch.data = last_check[0]
 
+    paginator = Paginator(video_data(ch.pk), 10)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     return render(request, 'user/channel.html', {'channel': ch, 'changes': analyse_channel(ch.pk),
-                                                 'videos': video_data(ch.pk)})
+                                                 'videos': page_obj})
 
 
 @login_required(login_url='login')
