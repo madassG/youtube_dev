@@ -35,20 +35,21 @@ def channel_delay(user_id, time=0, need_notes=True):
                 'views': 0
             }
 
-        if need_notes:
+        if need_notes and len(notes) > 0:
             notes_array = {
                 'values': {
-                    'subs': [],
-                    'vids': [],
-                    'views': [],
+                    'subs': [0],
+                    'vids': [notes[0].videos_quantity],
+                    'views': [0],
                 },
-                'dates': []
+                'dates': [datetime.strftime(notes[0].created_at.date(), '%Y-%m-%d')]
             }
-            for note in notes:
-                notes_array['values']['subs'].append(note.subscribers)
-                notes_array['values']['vids'].append(note.videos_quantity)
-                notes_array['values']['views'].append(note.total_views)
-                notes_array['dates'].append(datetime.strftime(note.created_at.date(), '%Y-%m-%d'))
+            for i in range(1, len(notes)):
+                notes_array['values']['subs'].append(notes[i].subscribers - notes[i - 1].subscribers)
+                notes_array['values']['vids'].append(notes[i].videos_quantity)
+                notes_array['values']['views'].append(notes[i].total_views - notes[i - 1].total_views)
+                notes_array['dates'].append(datetime.strftime(notes[i].created_at.date(), '%Y-%m-%d'))
+
             result = {
                 'notes': notes_array,
                 'change': change,
