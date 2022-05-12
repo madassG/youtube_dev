@@ -68,5 +68,20 @@ window.onload = () => {
             bl.style.display = bl.style.display == 'none' ? 'grid' : 'none';
         });
     }
+
+    const nots_container = document.querySelector('.notifications');
+
+    if (nots_container) {
+        const nots = nots_container.children;
+
+        for (let i = nots.length - 1; i >= 0; --i) {
+            nots[i].style.animationDelay = (nots.length - i)*0.2 + 's';
+            nots[i].style.animationName = 'slide-in-out';
+
+            nots[i].addEventListener('click', (e) => {
+                nots[i].style.opacity = 0;
+            });
+        }
+    }
 }
 

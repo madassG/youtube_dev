@@ -315,7 +315,7 @@ h1 {
 }
 
 .channels-block-content__button__delete .channels__button__text::before {
-  background-image: url("/static//img/delete.png");
+  background-image: url("/static/img/delete.png");
 }
 
 .channels-block-content-statistics {
@@ -888,4 +888,110 @@ h1 {
   font-size: 1.1rem;
   font-weight: 700;
   padding: 7px 0;
+}
+
+.notifications {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  z-index: 100;
+}
+
+.notifications-item {
+  width: 360px;
+  font-size: .9rem;
+  padding: 10px;
+  background-color: white;
+  color: #2D2D2D;
+  border-radius: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(400px);
+      -ms-transform: translateX(400px);
+          transform: translateX(400px);
+  margin-top: 10px;
+  cursor: pointer;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.notifications-item__image {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.notifications-item__text {
+  width: 300px;
+  padding-left: 10px;
+}
+
+.notifications__success {
+  border: solid #00FF00 3px;
+}
+
+.notifications__success div {
+  background-image: url(/static/img/check.png);
+}
+
+.notifications__error {
+  border: solid #F00000 3px;
+}
+
+.notifications__error div {
+  background-image: url(/static/img/cross.png);
+}
+
+@-webkit-keyframes slide-in-out {
+  from {
+    -webkit-transform: translateX(400px) scale(0.5);
+            transform: translateX(400px) scale(0.5);
+  }
+
+  8% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+
+  92% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+
+  to {
+    -webkit-transform: translateX(400px) scale(0.5);
+            transform: translateX(400px) scale(0.5);
+  }
+}
+
+@keyframes slide-in-out {
+  from {
+    -webkit-transform: translateX(400px) scale(0.5);
+            transform: translateX(400px) scale(0.5);
+  }
+
+  8% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+
+  92% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+
+  to {
+    -webkit-transform: translateX(400px) scale(0.5);
+            transform: translateX(400px) scale(0.5);
+  }
 }

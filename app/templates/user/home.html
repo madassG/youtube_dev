@@ -19,9 +19,10 @@
                 {{user.telegram_chat}}{% endif %}</span></p>
         </div>
         <div class="profile-data-text">
-            <p class="profile-data-text__bar">Просмотры: <span>998 876 673</span></p>
-            <p class="profile-data-text__bar">Подписчики: <span>3 876 000</span></p>
-            <p class="profile-data-text__bar">Каналы: <span>5</span></p>
+            <p class="profile-data-text__bar">Просмотры: <span>{{ user.data.total_views }}</span></p>
+            <p class="profile-data-text__bar">Подписчики: <span>{{ user.data.subscribers }}</span></p>
+            <p class="profile-data-text__bar">Видео: <span>{{ user.data.videos_quantity }}</span></p>
+            <p class="profile-data-text__bar">Каналы: <span>{{ user.channels_count }}</span></p>
         </div>
     </div>
     <h1 class="main__title">Награды</h1>
@@ -56,5 +57,7 @@
         <p class="subscription__text">Уровень: <span class="premium" style="color: #FF0000">Нет</span></p>
         {% endif %}
     </div>
+
+    <strong><a href="{% url 'logout' %}">Выйти</a></strong>
 </section>
 {% endblock %}

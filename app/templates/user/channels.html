@@ -5,6 +5,14 @@
 
 {% block content %}
 {% include 'user/nav.html'%}
+    <div class="notifications">
+        {% for not in nots %}
+            <div class="notifications-item notifications__{{ not.type }}">
+                <div class="notifications-item__image"></div>
+                <p class="notifications-item__text">{{ not.text }}</p>
+            </div>
+        {% endfor %}
+    </div>
     <section class="channels main">
         <h1 class="main__title">Каналы</h1>
         {% for account in accounts %}
