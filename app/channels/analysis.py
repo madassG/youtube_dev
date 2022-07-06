@@ -1,4 +1,3 @@
-from bot.models import User
 from channels.models import Channel, Video, Account
 from datetime import datetime, timedelta
 from django.forms.models import model_to_dict

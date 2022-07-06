@@ -1,7 +1,6 @@
 from django.utils import timezone
 
 from django.db import models
-from bot.models import User
 from users.models import Client, Reward
 
 
@@ -22,6 +21,7 @@ class Account(models.Model):
 
     purpose = models.TextField(blank=True, verbose_name="Цель")
     youtube = models.CharField(verbose_name="Идентификатор youtube канала", max_length=200)
+    youtube_error = models.BooleanField(verbose_name='Была ли ошибка при проверке', default=False)
     category = models.ForeignKey(Niche, on_delete=models.PROTECT, null=True, blank=True,
                                  verbose_name="Категория")
 

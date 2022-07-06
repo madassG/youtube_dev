@@ -19,7 +19,7 @@
         <div class="channels-block">
             <div class="channels-block-header">
                 <div class="channels-block-header__text">
-                    <p class="channels-block-header__id">ID: {{ account.youtube }}</p>
+                    <p class="channels-block-header__id">ID: {{ account.youtube }} {% if account.youtube_error %}<span style="color: #FF0000">(Проверьте правильность)</span>{% endif %}</p>
                     <h2 class="channels-block-header__title">
                     {% if account.name %}{{ account.name|slice:":18" }}{% else %}Неизвестно{% endif %}
                     </h2>

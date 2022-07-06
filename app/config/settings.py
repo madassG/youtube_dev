@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'celery',
     'channels',
-    'bot',
     'users'
 ]
 

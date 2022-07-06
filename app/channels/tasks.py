@@ -1,5 +1,4 @@
 from config.celery import app
-from bot.models import User
 from channels.models import Channel, Video, Account
 from users.models import Client
 from channels.channel import youtube_request_channel, youtube_request_playlist, youtube_request_video
@@ -117,10 +116,15 @@ def check_user(user_id):
     if channel_id:
         items = youtube_request_channel(channel_id, is_username)
         if items is None:
+            user.youtube_error = True
+            user.save()
             logger.error(
                 f"{datetime.now().strftime('%m/%d/%Y, %H:%M:%S')} "
                 f": check_user - user id: {user_id}")
             return
+
+        user.youtube_error = False
+        user.save()
         user.playlist_id = items['contentDetails']['relatedPlaylists']['uploads']
         user.name = items['brandingSettings'].get('channel').get('title')
         user.channel_keywords = items['brandingSettings'].get('channel').get('keywords')
